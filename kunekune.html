@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kune Kune | Thompson Corral</title>
+  <meta name="description" content="Meet Thompson Corral's AKKPS-registered KuneKune breeding herd, bred using pedigree analysis to minimize inbreeding and produce healthy piglets." />
+  <style>
+/* ============================================================
+   Thompson Corral — Option B: Warm Farmhouse
+   Palette: cream #FBF6EE · tan border #E4D3B4 · brown ink #3B2E22
+            rust accent #A6522E · card white #FFFFFF
+   Type:    Georgia (headings) · system sans (body)
+   Layout:  plain stacked sections, centered hero text, flat cards —
+            matching the simple structure of the original Wix site.
+   ============================================================ */
+
+:root {
+  --cream: #FBF6EE;
+  --cream-deep: #F3E9D6;
+  --tan-border: #E4D3B4;
+  --ink: #3B2E22;
+  --ink-soft: #6B5B48;
+  --rust: #A6522E;
+  --rust-light: #C06B41;
+  --white: #FFFFFF;
+
+  --font-display: Georgia, 'Times New Roman', serif;
+  --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: inherit; }
+
+:focus-visible {
+  outline: 3px solid var(--rust);
+  outline-offset: 2px;
+}
+
+.wrap {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- Header / nav ---------- */
+
+.site-header {
+  background: var(--cream);
+  border-bottom: 2px solid var(--tan-border);
+}
+
+.site-header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 72px;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.brand-mark {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid var(--rust);
+  display: grid;
+  place-items: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--rust);
+  flex-shrink: 0;
+}
+
+.brand-text {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.brand-text small {
+  display: block;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 10.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-top: 1px;
+}
+
+.main-nav {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 5px;
+  transition: background 0.15s ease;
+}
+
+.main-nav a:hover { background: var(--cream-deep); }
+
+.main-nav a.current {
+  color: var(--white);
+  background: var(--rust);
+}
+
+/* ---------- Hero (plain, no image overlay) ---------- */
+
+.hero {
+  text-align: center;
+  padding: 56px 24px 44px;
+  border-bottom: 2px solid var(--tan-border);
+}
+
+.hero-eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--rust);
+  margin: 0 0 14px;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  line-height: 1.1;
+  margin: 0 0 16px;
+  color: var(--ink);
+}
+
+.hero p {
+  max-width: 540px;
+  margin: 0 auto 28px;
+  font-size: 16px;
+  color: var(--ink-soft);
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero-photo {
+  margin-top: 8px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--tan-border);
+}
+
+.hero-photo img { width: 100%; height: 320px; object-fit: cover; }
+
+/* ---------- Buttons ---------- */
+
+.btn {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  padding: 12px 22px;
+  border-radius: 6px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform 0.12s ease, opacity 0.12s ease, background 0.12s ease;
+}
+
+.btn:hover { transform: translateY(-1px); }
+
+.btn-brass,
+.btn-barn {
+  background: var(--rust);
+  color: var(--white);
+}
+
+.btn-brass:hover,
+.btn-barn:hover { background: var(--rust-light); }
+
+.btn-outline {
+  background: transparent;
+  border-color: var(--rust);
+  color: var(--rust);
+}
+
+.btn-outline:hover { background: var(--cream-deep); }
+
+.btn-block { display: block; width: 100%; text-align: center; }
+
+.btn[disabled],
+.btn.is-disabled {
+  opacity: 0.5;
+  cursor: default;
+  transform: none !important;
+}
+
+/* ---------- Section scaffolding ---------- */
+
+.section { padding: 56px 0; }
+
+.section-alt { background: var(--cream-deep); }
+
+.section-pasture {
+  background: var(--ink);
+  color: var(--cream);
+}
+
+.section-head {
+  text-align: center;
+  max-width: 620px;
+  margin: 0 auto 40px;
+}
+
+.section-eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--rust);
+  margin: 0 0 10px;
+}
+
+.section-pasture .section-eyebrow { color: var(--rust-light); }
+
+.section-head h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  margin: 0 0 12px;
+  color: var(--ink);
+}
+
+.section-pasture .section-head h2 { color: var(--cream); }
+
+.section-head p { color: var(--ink-soft); margin: 0; }
+
+.section-pasture .section-head p,
+.section-pasture p { color: rgba(251,246,238,0.85); }
+
+.prose {
+  max-width: 720px;
+  margin: 0 auto;
+  font-size: 16px;
+  color: var(--ink-soft);
+}
+
+.prose + .prose { margin-top: 1em; }
+
+/* ---------- Feature cards (home) ---------- */
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.feature-card {
+  background: var(--white);
+  border: 1px solid var(--tan-border);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.feature-card img { height: 200px; object-fit: cover; width: 100%; }
+
+.feature-card-body { padding: 22px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+
+.feature-card-body h3 {
+  font-family: var(--font-display);
+  font-size: 21px;
+  margin: 0;
+}
+
+.feature-card-body p { color: var(--ink-soft); margin: 0; font-size: 14.5px; flex: 1; }
+
+.feature-links { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 6px; }
+
+.feature-links a {
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--rust);
+  border-bottom: 1px solid var(--rust);
+  padding-bottom: 1px;
+}
+
+/* ---------- Ethos strip: medal badges ---------- */
+
+.ethos-strip {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding-top: 6px;
+}
+
+.ethos-item {
+  width: 148px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.ethos-item .glyph { display: none; }
+
+.ethos-medal {
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 3px solid var(--rust);
+  outline: 2px solid var(--tan-border);
+  outline-offset: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px;
+  box-shadow: 0 6px 14px rgba(59, 46, 34, 0.16);
+  position: relative;
+  z-index: 1;
+}
+
+.ethos-icon { font-size: 26px; line-height: 1; }
+
+.ethos-item strong {
+  font-family: var(--font-display);
+  font-size: 13px;
+  line-height: 1.25;
+  display: block;
+  color: var(--ink);
+}
+
+.ethos-ribbons {
+  display: flex;
+  justify-content: center;
+  margin-top: -20px;
+  gap: 2px;
+  position: relative;
+  z-index: 0;
+}
+
+.ethos-ribbon {
+  width: 20px;
+  height: 40px;
+  background: var(--rust);
+  clip-path: polygon(0 0, 100% 0, 100% 76%, 50% 100%, 0 76%);
+}
+
+.ethos-ribbon.left { transform: rotate(-10deg) translateX(4px); }
+.ethos-ribbon.right {
+  transform: rotate(10deg) translateX(-4px);
+  background: var(--rust-light);
+}
+
+/* ---------- Highlight ribbon badges (pedigree summary) ---------- */
+
+.highlight-badges {
+  display: flex;
+  justify-content: center;
+  gap: 56px;
+  flex-wrap: wrap;
+  margin: 6px 0 26px;
+}
+
+.highlight-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 190px;
+}
+
+.highlight-ribbon {
+  width: 32px;
+  height: 44px;
+  background: var(--rust-light);
+  clip-path: polygon(0 0, 100% 0, 100% 76%, 50% 92%, 0 76%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.highlight-badge strong {
+  font-family: var(--font-display);
+  font-size: 15px;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ---------- Registry card ---------- */
+
+.registry-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 22px;
+}
+
+.registry-card {
+  background: var(--white);
+  border: 1px solid var(--tan-border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.registry-photo {
+  position: relative;
+  aspect-ratio: 4 / 3.2;
+  overflow: hidden;
+  border-bottom: 1px solid var(--tan-border);
+}
+
+.registry-photo img { width: 100%; height: 100%; object-fit: cover; }
+
+.registry-seal {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  background: rgba(59, 46, 34, 0.82);
+  color: var(--cream);
+  padding: 4px 9px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.registry-body { padding: 18px 18px 20px; }
+
+.registry-name-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.registry-name {
+  font-family: var(--font-display);
+  font-size: 20px;
+  margin: 0;
+}
+
+.registry-role {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--rust);
+  white-space: nowrap;
+}
+
+.registry-bio {
+  font-size: 14px;
+  color: var(--ink-soft);
+  margin: 6px 0 14px;
+}
+
+.registry-data {
+  font-size: 13px;
+  border-top: 1px solid var(--tan-border);
+  padding-top: 12px;
+  display: grid;
+  gap: 6px;
+}
+
+.registry-data div { display: flex; justify-content: space-between; gap: 12px; }
+.registry-data dt, .registry-data span.k { color: var(--ink-soft); }
+.registry-data dd, .registry-data span.v { margin: 0; text-align: right; font-weight: 700; }
+
+.registry-price {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--tan-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.registry-price .amount {
+  font-family: var(--font-display);
+  font-size: 21px;
+  color: var(--rust);
+}
+
+.status-tag {
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 3px 9px;
+  border-radius: 20px;
+}
+
+.status-available { background: #E7F0DE; color: #4C6B34; }
+.status-reserved { background: #F3E9D6; color: var(--rust); }
+.status-sold { background: #EEE; color: #888; }
+
+.buy-actions { margin-top: 14px; display: grid; gap: 8px; }
+
+.buy-note {
+  font-size: 11.5px;
+  color: var(--ink-soft);
+  margin-top: 8px;
+  line-height: 1.4;
+}
+
+/* ---------- Photo gallery ---------- */
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--tan-border);
+}
+
+/* ---------- Pedigree highlight block ---------- */
+
+.pedigree-block {
+  background: var(--white);
+  border: 1px solid var(--tan-border);
+  border-left: 4px solid var(--rust);
+  border-radius: 8px;
+  padding: 24px 26px;
+  margin-top: 36px;
+}
+
+.pedigree-block h3 {
+  font-family: var(--font-display);
+  font-size: 18px;
+  margin: 0 0 12px;
+}
+
+.pedigree-block p {
+  font-size: 14.5px;
+  color: var(--ink-soft);
+  margin: 0 0 12px;
+}
+
+.pedigree-block p:last-child { margin-bottom: 0; }
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  background: var(--ink);
+  color: rgba(251, 246, 238, 0.75);
+  padding: 36px 0 24px;
+}
+
+.footer-grid {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(251,246,238,0.14);
+  margin-bottom: 16px;
+}
+
+.footer-brand {
+  font-family: var(--font-display);
+  color: var(--cream);
+  font-size: 18px;
+}
+
+.footer-links { display: flex; gap: 18px; flex-wrap: wrap; }
+
+.footer-links a { text-decoration: none; font-size: 13.5px; color: rgba(251,246,238,0.75); }
+.footer-links a:hover { color: var(--rust-light); }
+
+.footer-fine { font-size: 12px; }
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 640px) {
+  .site-header .wrap { flex-direction: column; align-items: flex-start; }
+  .hero { padding: 44px 20px 36px; }
+  .section { padding: 40px 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn:hover { transform: none; }
+}
+
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">TC</span>
+        <span class="brand-text">Thompson Corral<small>Registered Livestock &middot; Arkansas</small></span>
+      </a>
+      <nav class="main-nav" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="cattle.html">Brown Swiss</a>
+        <a href="kunekune.html" class="current">Kune Kune</a>
+        <a href="piglets.html">Piglets For Sale</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <p class="hero-eyebrow">Kune Kune</p>
+    <h1 style="font-size:clamp(2rem,4vw,3rem);">Bred by the Bloodline, Not by Chance</h1>
+    <p>Our breeding program is carefully planned using pedigree analysis to minimize inbreeding and produce genetically diverse, healthy KuneKune piglets.</p>
+    <div class="wrap">
+      <div class="hero-photo">
+        <img src="https://static.wixstatic.com/media/d72fc0_d86e2d82713d4c0a8899aaf82e4b84fc~mv2.jpg" alt="Coconut, AKKPS registered KuneKune boar" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="section-eyebrow">Our AKKPS Registered Boar</p>
+        <h2>Coconut</h2>
+      </div>
+
+      <div class="registry-grid" style="max-width:340px; margin:0 auto 0;">
+        <article class="registry-card">
+          <div class="registry-photo">
+            <img src="https://static.wixstatic.com/media/d72fc0_d86e2d82713d4c0a8899aaf82e4b84fc~mv2.jpg/v1/fill/w_443,h_431,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/DSC_6263.jpg" alt="Coconut, KuneKune boar" />
+            <span class="registry-seal">AKKPS Registered</span>
+          </div>
+          <div class="registry-body">
+            <div class="registry-name-row">
+              <h3 class="registry-name">Coconut</h3>
+              <span class="registry-role">Boar</span>
+            </div>
+            <p class="registry-bio">Foundation boar of the Thompson Corral herd, carrying four of the breed's eleven foundational bloodlines.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="pedigree-block">
+        <h3>Pedigree Highlights</h3>
+        <p>Coconut traces back to several of the founding bloodlines that established the KuneKune breed in the United States after the pigs were rescued from near-extinction in New Zealand during the 1970s, when only around fifty individuals remained. His sire line runs through the Whakanui bloodline (RAF Whakanui 2 "Walter," out of Zion's Gate Whakanui 2 "Alton"), one of eleven original boar lines imported from New Zealand in 2010 and now considered part of the genetic backbone of American KuneKune herds. His dam, Crazy 5 Farms Haunene 1 "Israel," descends from the Haunene sow line, also imported from New Zealand in 2010 and valued for strong maternal traits.</p>
+        <p>Further back in the pedigree, the Piney Creek Farm Boris line appears on the dam's side, connecting to Boris, one of the very first KuneKune bloodlines brought to the U.S. from New Zealand in 1995, while the BH Tutaki bloodline (imported from England in 2011) shows up twice in the tree, linking both sides of the dam's ancestry. Altogether, this pedigree combines four of the breed's eleven foundational boar lines &mdash; Whakanui, Boris, and BH Tutaki &mdash; along with the Haunene sow line, giving Coconut a diverse genetic base that reflects the careful, registry-tracked breeding (AKKPS) that has helped the KuneKune breed recover and thrive since its rescue decades ago.</p>
+        <p>What makes his pedigree even more special is a touch of rare, purebred British bloodline, tracing back to one of only four documented KuneKune imports from the UK into the United States, brought over in 2012 from Barton Hill Farm in England. Today, only a small number of American breeders maintain these original British bloodlines, making them a valued piece of genetic history within the breed. At Thompson Corral, every pairing is thoughtfully chosen with genetic diversity in mind, so our piglets start life with strong, healthy bloodlines.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="section-eyebrow">Our AKKPS Registered Ladies</p>
+        <h2>The Sows</h2>
+      </div>
+
+      <div class="registry-grid">
+        <article class="registry-card">
+          <div class="registry-photo">
+            <img src="https://static.wixstatic.com/media/d72fc0_1b072cb0f9c64b3382b6f7dbb152ef87~mv2.jpg/v1/fill/w_443,h_431,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/DSC_6308_edited_edited.jpg" alt="Bo Peep, KuneKune sow" />
+            <span class="registry-seal">AKKPS Registered</span>
+          </div>
+          <div class="registry-body">
+            <div class="registry-name-row"><h3 class="registry-name">Bo Peep</h3><span class="registry-role">Sow</span></div>
+            <p class="registry-bio">AKKPS-registered foundation sow of the Thompson Corral herd.</p>
+          </div>
+        </article>
+
+        <article class="registry-card">
+          <div class="registry-photo">
+            <img src="https://static.wixstatic.com/media/a3c153_91dc165103f9438bbc9a0216b278a11d~mv2.jpg/v1/fill/w_443,h_431,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/1.jpg" alt="Jessie, KuneKune sow" />
+            <span class="registry-seal">AKKPS Registered</span>
+          </div>
+          <div class="registry-body">
+            <div class="registry-name-row"><h3 class="registry-name">Jessie</h3><span class="registry-role">Sow</span></div>
+            <p class="registry-bio">Descends from champion show lines on both sire and dam sides.</p>
+          </div>
+        </article>
+
+        <article class="registry-card">
+          <div class="registry-photo">
+            <img src="https://static.wixstatic.com/media/a3c153_0225bd316b414eb88d3358ba488bde5e~mv2.jpg/v1/fill/w_443,h_431,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/4.jpg" alt="Mrs. Potato Head, KuneKune sow" />
+            <span class="registry-seal">AKKPS Registered</span>
+          </div>
+          <div class="registry-body">
+            <div class="registry-name-row"><h3 class="registry-name">Mrs. Potato Head</h3><span class="registry-role">Sow</span></div>
+            <p class="registry-bio">Part of the championship-line breeding group at Thompson Corral.</p>
+          </div>
+        </article>
+
+        <article class="registry-card">
+          <div class="registry-photo">
+            <img src="https://static.wixstatic.com/media/a3c153_52445da233db4ab6ba88eab5b99650de~mv2.jpg/v1/fill/w_443,h_431,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/6.jpg" alt="Dolly, KuneKune sow" />
+            <span class="registry-seal">AKKPS Registered</span>
+          </div>
+          <div class="registry-body">
+            <div class="registry-name-row"><h3 class="registry-name">Dolly</h3><span class="registry-role">Sow</span></div>
+            <p class="registry-bio">Part of the championship-line breeding group at Thompson Corral.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="pedigree-block">
+        <h3>Championship Bloodline Highlights</h3>
+        <div class="highlight-badges">
+          <div class="highlight-badge">
+            <span class="highlight-ribbon">★</span>
+            <strong>Champion Sire Bloodline</strong>
+          </div>
+          <div class="highlight-badge">
+            <span class="highlight-ribbon">★</span>
+            <strong>Reserve Supreme Champion Dam Line</strong>
+          </div>
+          <div class="highlight-badge">
+            <span class="highlight-ribbon">★</span>
+            <strong>Three Generations of Champions</strong>
+          </div>
+        </div>
+        <p>These KuneKune ladies come from an exceptional pedigree packed with proven show champions on both sides of their family tree. Their sire's line traces directly back to CJF Ru 4 "Duke" (AKKPS 11818), a multi-titled champion boar whose accomplishments include NZ Reserve Grand Boar at the 2023 EKPA International Futurity, and a triple win at the 2024 EKPA Spring Classic where he took Boar Reserve Grand Champion, NZ Best In Show, and NZ Grand Boar in the same show. Going back another generation, Duke's own sire, Relic Ru 1 "Onyk," carries an official Reserve Champion title in the AKKPS Herd Book.</p>
+        <p>On the dam's side, these girls descend from CJF Tonganui 1 "Rocky" (AKKPS 16210), who was named both Boar Reserve Grand Champion and Reserve Supreme Champion of the entire show at the 2022 EKPA Spring Classic &mdash; one of the highest honors a KuneKune can earn. With back-to-back championship bloodlines from two of the breed's most decorated boars, our sows represent the kind of quality genetics that make exceptional foundation stock. We use coefficient of inbreeding (COI) analysis to guide our breeding decisions, helping ensure our piglets are the product of diverse, well-planned bloodlines.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="section-eyebrow">Unregistered Sows</p>
+        <h2>Also on the Farm</h2>
+      </div>
+      <div class="registry-grid">
+        <article class="registry-card">
+          <div class="registry-photo">
+            <img src="https://static.wixstatic.com/media/d72fc0_fe4748d8e24a4bafa123f573460a12aa~mv2.jpg/v1/fill/w_368,h_515,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/d72fc0_fe4748d8e24a4bafa123f573460a12aa~mv2.jpg" alt="Bluey" />
+          </div>
+          <div class="registry-body">
+            <div class="registry-name-row"><h3 class="registry-name">Bluey</h3><span class="registry-role">Sow</span></div>
+            <div class="feature-links" style="margin-top:6px;"><a href="piglets.html">See Bluey's Piglets</a></div>
+          </div>
+        </article>
+        <article class="registry-card">
+          <div class="registry-photo">
+            <img src="https://static.wixstatic.com/media/d72fc0_51126eca4ed947a39bf5f4e9550bff9d~mv2.jpg/v1/fill/w_368,h_436,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/d72fc0_51126eca4ed947a39bf5f4e9550bff9d~mv2.jpg" alt="Mia" />
+          </div>
+          <div class="registry-body">
+            <div class="registry-name-row"><h3 class="registry-name">Mia</h3><span class="registry-role">Sow</span></div>
+            <div class="feature-links" style="margin-top:6px;"><a href="piglets.html">See Mia's Piglets</a></div>
+          </div>
+        </article>
+        <article class="registry-card">
+          <div class="registry-photo">
+            <img src="https://static.wixstatic.com/media/d72fc0_bcb00a42d69f4464ac65140efa90f796~mv2.jpg/v1/fill/w_600,h_400,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/d72fc0_bcb00a42d69f4464ac65140efa90f796~mv2.jpg" alt="Indy" />
+          </div>
+          <div class="registry-body">
+            <div class="registry-name-row"><h3 class="registry-name">Indy</h3><span class="registry-role">Sow</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-pasture">
+    <div class="wrap" style="text-align:center;">
+      <h2 style="font-family:var(--font-display); font-size:1.8rem; margin:0 0 12px;">Looking to Bring One Home?</h2>
+      <p style="margin:0 0 24px; color:rgba(247,242,231,0.85);">See which piglets are currently available and reserve yours.</p>
+      <a class="btn btn-brass" href="piglets.html">View Piglets For Sale</a>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">Thompson Corral</div>
+        <nav class="footer-links" aria-label="Footer">
+          <a href="index.html">Home</a>
+          <a href="cattle.html">Brown Swiss</a>
+          <a href="kunekune.html">Kune Kune</a>
+          <a href="piglets.html">Piglets For Sale</a>
+          <a href="mailto:kunekune@thompsoncorral.com">Contact</a>
+        </nav>
+      </div>
+      <p class="footer-fine">&copy; <span id="year"></span> Thompson Corral. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Piglets For Sale | Thompson Corral</title>
+  <meta name="description" content="AKKPS-registered KuneKune piglets currently available at Thompson Corral. Reserve or buy online." />
+  <style>
+/* ============================================================
+   Thompson Corral — Option B: Warm Farmhouse
+   Palette: cream #FBF6EE · tan border #E4D3B4 · brown ink #3B2E22
+            rust accent #A6522E · card white #FFFFFF
+   Type:    Georgia (headings) · system sans (body)
+   Layout:  plain stacked sections, centered hero text, flat cards —
+            matching the simple structure of the original Wix site.
+   ============================================================ */
+
+:root {
+  --cream: #FBF6EE;
+  --cream-deep: #F3E9D6;
+  --tan-border: #E4D3B4;
+  --ink: #3B2E22;
+  --ink-soft: #6B5B48;
+  --rust: #A6522E;
+  --rust-light: #C06B41;
+  --white: #FFFFFF;
+
+  --font-display: Georgia, 'Times New Roman', serif;
+  --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: inherit; }
+
+:focus-visible {
+  outline: 3px solid var(--rust);
+  outline-offset: 2px;
+}
+
+.wrap {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- Header / nav ---------- */
+
+.site-header {
+  background: var(--cream);
+  border-bottom: 2px solid var(--tan-border);
+}
+
+.site-header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 72px;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.brand-mark {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid var(--rust);
+  display: grid;
+  place-items: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--rust);
+  flex-shrink: 0;
+}
+
+.brand-text {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.brand-text small {
+  display: block;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 10.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-top: 1px;
+}
+
+.main-nav {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 5px;
+  transition: background 0.15s ease;
+}
+
+.main-nav a:hover { background: var(--cream-deep); }
+
+.main-nav a.current {
+  color: var(--white);
+  background: var(--rust);
+}
+
+/* ---------- Hero (plain, no image overlay) ---------- */
+
+.hero {
+  text-align: center;
+  padding: 56px 24px 44px;
+  border-bottom: 2px solid var(--tan-border);
+}
+
+.hero-eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--rust);
+  margin: 0 0 14px;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  line-height: 1.1;
+  margin: 0 0 16px;
+  color: var(--ink);
+}
+
+.hero p {
+  max-width: 540px;
+  margin: 0 auto 28px;
+  font-size: 16px;
+  color: var(--ink-soft);
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero-photo {
+  margin-top: 8px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--tan-border);
+}
+
+.hero-photo img { width: 100%; height: 320px; object-fit: cover; }
+
+/* ---------- Buttons ---------- */
+
+.btn {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  padding: 12px 22px;
+  border-radius: 6px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform 0.12s ease, opacity 0.12s ease, background 0.12s ease;
+}
+
+.btn:hover { transform: translateY(-1px); }
+
+.btn-brass,
+.btn-barn {
+  background: var(--rust);
+  color: var(--white);
+}
+
+.btn-brass:hover,
+.btn-barn:hover { background: var(--rust-light); }
+
+.btn-outline {
+  background: transparent;
+  border-color: var(--rust);
+  color: var(--rust);
+}
+
+.btn-outline:hover { background: var(--cream-deep); }
+
+.btn-block { display: block; width: 100%; text-align: center; }
+
+.btn[disabled],
+.btn.is-disabled {
+  opacity: 0.5;
+  cursor: default;
+  transform: none !important;
+}
+
+/* ---------- Section scaffolding ---------- */
+
+.section { padding: 56px 0; }
+
+.section-alt { background: var(--cream-deep); }
+
+.section-pasture {
+  background: var(--ink);
+  color: var(--cream);
+}
+
+.section-head {
+  text-align: center;
+  max-width: 620px;
+  margin: 0 auto 40px;
+}
+
+.section-eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--rust);
+  margin: 0 0 10px;
+}
+
+.section-pasture .section-eyebrow { color: var(--rust-light); }
+
+.section-head h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  margin: 0 0 12px;
+  color: var(--ink);
+}
+
+.section-pasture .section-head h2 { color: var(--cream); }
+
+.section-head p { color: var(--ink-soft); margin: 0; }
+
+.section-pasture .section-head p,
+.section-pasture p { color: rgba(251,246,238,0.85); }
+
+.prose {
+  max-width: 720px;
+  margin: 0 auto;
+  font-size: 16px;
+  color: var(--ink-soft);
+}
+
+.prose + .prose { margin-top: 1em; }
+
+/* ---------- Feature cards (home) ---------- */
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.feature-card {
+  background: var(--white);
+  border: 1px solid var(--tan-border);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.feature-card img { height: 200px; object-fit: cover; width: 100%; }
+
+.feature-card-body { padding: 22px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+
+.feature-card-body h3 {
+  font-family: var(--font-display);
+  font-size: 21px;
+  margin: 0;
+}
+
+.feature-card-body p { color: var(--ink-soft); margin: 0; font-size: 14.5px; flex: 1; }
+
+.feature-links { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 6px; }
+
+.feature-links a {
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--rust);
+  border-bottom: 1px solid var(--rust);
+  padding-bottom: 1px;
+}
+
+/* ---------- Ethos strip: medal badges ---------- */
+
+.ethos-strip {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding-top: 6px;
+}
+
+.ethos-item {
+  width: 148px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.ethos-item .glyph { display: none; }
+
+.ethos-medal {
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 3px solid var(--rust);
+  outline: 2px solid var(--tan-border);
+  outline-offset: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px;
+  box-shadow: 0 6px 14px rgba(59, 46, 34, 0.16);
+  position: relative;
+  z-index: 1;
+}
+
+.ethos-icon { font-size: 26px; line-height: 1; }
+
+.ethos-item strong {
+  font-family: var(--font-display);
+  font-size: 13px;
+  line-height: 1.25;
+  display: block;
+  color: var(--ink);
+}
+
+.ethos-ribbons {
+  display: flex;
+  justify-content: center;
+  margin-top: -20px;
+  gap: 2px;
+  position: relative;
+  z-index: 0;
+}
+
+.ethos-ribbon {
+  width: 20px;
+  height: 40px;
+  background: var(--rust);
+  clip-path: polygon(0 0, 100% 0, 100% 76%, 50% 100%, 0 76%);
+}
+
+.ethos-ribbon.left { transform: rotate(-10deg) translateX(4px); }
+.ethos-ribbon.right {
+  transform: rotate(10deg) translateX(-4px);
+  background: var(--rust-light);
+}
+
+/* ---------- Highlight ribbon badges (pedigree summary) ---------- */
+
+.highlight-badges {
+  display: flex;
+  justify-content: center;
+  gap: 56px;
+  flex-wrap: wrap;
+  margin: 6px 0 26px;
+}
+
+.highlight-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 190px;
+}
+
+.highlight-ribbon {
+  width: 32px;
+  height: 44px;
+  background: var(--rust-light);
+  clip-path: polygon(0 0, 100% 0, 100% 76%, 50% 92%, 0 76%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.highlight-badge strong {
+  font-family: var(--font-display);
+  font-size: 15px;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ---------- Registry card ---------- */
+
+.registry-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 22px;
+}
+
+.registry-card {
+  background: var(--white);
+  border: 1px solid var(--tan-border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.registry-photo {
+  position: relative;
+  aspect-ratio: 4 / 3.2;
+  overflow: hidden;
+  border-bottom: 1px solid var(--tan-border);
+}
+
+.registry-photo img { width: 100%; height: 100%; object-fit: cover; }
+
+.registry-seal {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  background: rgba(59, 46, 34, 0.82);
+  color: var(--cream);
+  padding: 4px 9px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.registry-body { padding: 18px 18px 20px; }
+
+.registry-name-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.registry-name {
+  font-family: var(--font-display);
+  font-size: 20px;
+  margin: 0;
+}
+
+.registry-role {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--rust);
+  white-space: nowrap;
+}
+
+.registry-bio {
+  font-size: 14px;
+  color: var(--ink-soft);
+  margin: 6px 0 14px;
+}
+
+.registry-data {
+  font-size: 13px;
+  border-top: 1px solid var(--tan-border);
+  padding-top: 12px;
+  display: grid;
+  gap: 6px;
+}
+
+.registry-data div { display: flex; justify-content: space-between; gap: 12px; }
+.registry-data dt, .registry-data span.k { color: var(--ink-soft); }
+.registry-data dd, .registry-data span.v { margin: 0; text-align: right; font-weight: 700; }
+
+.registry-price {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--tan-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.registry-price .amount {
+  font-family: var(--font-display);
+  font-size: 21px;
+  color: var(--rust);
+}
+
+.registry-photo-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--cream-deep);
+  color: var(--ink-soft);
+  font-size: 12.5px;
+  font-weight: 700;
+  text-align: center;
+  border: 2px dashed var(--tan-border);
+}
+
+.status-tag {
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 3px 9px;
+  border-radius: 20px;
+}
+
+.status-available { background: #E7F0DE; color: #4C6B34; }
+.status-reserved { background: #F3E9D6; color: var(--rust); }
+.status-sold { background: #EEE; color: #888; }
+
+.buy-actions { margin-top: 14px; display: grid; gap: 8px; }
+
+.buy-note {
+  font-size: 11.5px;
+  color: var(--ink-soft);
+  margin-top: 8px;
+  line-height: 1.4;
+}
+
+/* ---------- Photo gallery ---------- */
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--tan-border);
+}
+
+/* ---------- Pedigree highlight block ---------- */
+
+.pedigree-block {
+  background: var(--white);
+  border: 1px solid var(--tan-border);
+  border-left: 4px solid var(--rust);
+  border-radius: 8px;
+  padding: 24px 26px;
+  margin-top: 36px;
+}
+
+.pedigree-block h3 {
+  font-family: var(--font-display);
+  font-size: 18px;
+  margin: 0 0 12px;
+}
+
+.pedigree-block p {
+  font-size: 14.5px;
+  color: var(--ink-soft);
+  margin: 0 0 12px;
+}
+
+.pedigree-block p:last-child { margin-bottom: 0; }
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  background: var(--ink);
+  color: rgba(251, 246, 238, 0.75);
+  padding: 36px 0 24px;
+}
+
+.footer-grid {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(251,246,238,0.14);
+  margin-bottom: 16px;
+}
+
+.footer-brand {
+  font-family: var(--font-display);
+  color: var(--cream);
+  font-size: 18px;
+}
+
+.footer-links { display: flex; gap: 18px; flex-wrap: wrap; }
+
+.footer-links a { text-decoration: none; font-size: 13.5px; color: rgba(251,246,238,0.75); }
+.footer-links a:hover { color: var(--rust-light); }
+
+.footer-fine { font-size: 12px; }
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 640px) {
+  .site-header .wrap { flex-direction: column; align-items: flex-start; }
+  .hero { padding: 44px 20px 36px; }
+  .section { padding: 40px 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn:hover { transform: none; }
+}
+
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">TC</span>
+        <span class="brand-text">Thompson Corral<small>Registered Livestock &middot; Arkansas</small></span>
+      </a>
+      <nav class="main-nav" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="cattle.html">Brown Swiss</a>
+        <a href="kunekune.html">Kune Kune</a>
+        <a href="piglets.html" class="current">Piglets For Sale</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="section" style="padding-top:56px;">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="section-eyebrow">Currently Available</p>
+        <h2>AKKPS Registered Piglets</h2>
+        <p>All registered piglets go home wormed, with health records and registration paperwork. A non-refundable deposit reserves a piglet until pickup.</p>
+      </div>
+
+      <div id="piglet-grid" class="registry-grid" aria-live="polite">
+        <!-- Rendered by the PIGLETS array below -->
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="section-eyebrow">Also Currently Available</p>
+        <h2>Unregistered Piglets</h2>
+        <p>Healthy KuneKune piglets from our herd that aren't AKKPS-papered. Same care, same farm, no registration paperwork.</p>
+      </div>
+
+      <div id="unregistered-grid" class="registry-grid" aria-live="polite">
+        <!-- Rendered by the UNREGISTERED_PIGLETS array below -->
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="prose" style="text-align:center;">
+        <p>Don't see the piglet you're looking for? We plan future litters throughout the year &mdash; email us to join the waitlist for the next one.</p>
+        <p><a class="btn btn-barn" href="mailto:kunekune@thompsoncorral.com?subject=Waitlist%20for%20Next%20Litter">Join the Waitlist</a></p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">Thompson Corral</div>
+        <nav class="footer-links" aria-label="Footer">
+          <a href="index.html">Home</a>
+          <a href="cattle.html">Brown Swiss</a>
+          <a href="kunekune.html">Kune Kune</a>
+          <a href="piglets.html">Piglets For Sale</a>
+          <a href="mailto:kunekune@thompsoncorral.com">Contact</a>
+        </nav>
+      </div>
+      <p class="footer-fine">&copy; <span id="year"></span> Thompson Corral. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script>
+/* ============================================================
+   PIGLET INVENTORY
+   ------------------------------------------------------------
+   This is the ONLY file you need to edit to add, remove, sell,
+   or reprice a piglet. No HTML editing required.
+
+   For each piglet, fill in the fields below. Leave a payment
+   field EMPTY ("") if you haven't set it up yet — the card will
+   automatically fall back to an "Email to Reserve" button.
+
+   HOW TO GET A STRIPE PAYMENT LINK (no coding required):
+     1. Log into dashboard.stripe.com
+     2. Payment links -> + New
+     3. Set the product name (e.g. "Willow - KuneKune Piglet") and price
+     4. Save, copy the link (looks like https://buy.stripe.com/xxxxx)
+     5. Paste it into stripeLink below
+
+   HOW TO GET A PAYPAL "BUY NOW" BUTTON:
+     1. Log into paypal.com -> PayPal Buttons (paypal.com/buttons)
+     2. Create a "Buy Now" button for the piglet
+     3. PayPal gives you a "hosted_button_id" value
+     4. Paste ONLY that id into paypalButtonId below (not the whole snippet)
+
+   status options: "available", "reserved", "sold"
+   (reserved/sold piglets are shown but the buy buttons are hidden)
+   ============================================================ */
+
+const PIGLETS = [
+  {
+    id: "clover",
+    name: "Clover",
+    sex: "Female",
+    regNumber: "AKKPS 99001",
+    sire: "Coconut",
+    dam: "Honey",
+    dob: "2026-05-10",
+    price: 850,
+    status: "available",
+    image: "https://static.wixstatic.com/media/d72fc0_bcb00a42d69f4464ac65140efa90f796~mv2.jpg/v1/fill/w_443,h_431,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/DSC_6269.jpg",
+    bio: "Registered KuneKune gilt out of Thompson Corral's championship-line herd.",
+    stripeLink: "",
+    paypalButtonId: ""
+  },
+  {
+    id: "duke-jr",
+    name: "Duke Jr",
+    sex: "Male",
+    regNumber: "AKKPS 99002",
+    sire: "Coconut",
+    dam: "Honey",
+    dob: "2026-05-10",
+    price: 850,
+    status: "available",
+    image: "https://static.wixstatic.com/media/d72fc0_e22c92de8f4245b58fd7d67cbf461780~mv2.jpg/v1/fill/w_443,h_431,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/DSC_6308_edited.jpg",
+    bio: "Registered KuneKune boar piglet, named for his grand-sire's champion bloodline.",
+    stripeLink: "",
+    paypalButtonId: ""
+  },
+  {
+    id: "rosie",
+    name: "Rosie",
+    sex: "Female",
+    regNumber: "AKKPS 99003",
+    sire: "Coconut",
+    dam: "Honey",
+    dob: "2026-05-10",
+    price: 850,
+    status: "available",
+    image: "https://static.wixstatic.com/media/d72fc0_e7345141a08e4d629a0a12090f3b059c~mv2.jpg/v1/fill/w_443,h_431,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/DSC_6308.jpg",
+    bio: "Registered KuneKune gilt out of Thompson Corral's championship-line herd.",
+    stripeLink: "",
+    paypalButtonId: ""
+  },
+  {
+    id: "willow",
+    name: "Willow",
+    sex: "Female",
+    regNumber: "AKKPS 99004",
+    sire: "Coconut",
+    dam: "Honey",
+    dob: "2026-05-10",
+    price: 850,
+    status: "available",
+    image: "https://static.wixstatic.com/media/d72fc0_d86e2d82713d4c0a8899aaf82e4b84fc~mv2.jpg/v1/fill/w_443,h_431,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/DSC_6263.jpg",
+    bio: "Registered KuneKune gilt out of Thompson Corral's championship-line herd.",
+    stripeLink: "",
+    paypalButtonId: ""
+  }
+];
+
+/* ============================================================
+   UNREGISTERED PIGLET INVENTORY
+   ------------------------------------------------------------
+   Same idea as above, but for piglets without AKKPS papers.
+   These are placeholders — replace name, sex, dam, price, photo,
+   and bio for each of your 18 with the real details, and delete
+   any entries you don't need.
+   ============================================================ */
+
+const UNREGISTERED_PIGLETS = [
+  { id: "unreg-01", name: "Piglet #1",  sex: "Female", dam: "Bluey", sire: "Coconut", dob: "", price: 450, status: "available", image: "", bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
+  { id: "unreg-02", name: "Piglet #2",  sex: "Male",   dam: "Bluey", sire: "Coconut", dob: "", price: 450, status: "available", image: "", bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
+  { id: "unreg-03", name: "Piglet #3",  sex: "Female", dam: "Bluey", sire: "Coconut", dob: "", price: 450, status: "available", image: "", bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
+  { id: "unreg-04", name: "Piglet #4",  sex: "Male",   dam: "Bluey", sire: "Coconut", dob: "", price: 450, status: "available", image: "", bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
+  { id: "unreg-05", name: "Piglet #5",  sex: "Female", dam: "Bluey", sire: "Coconut", dob: "", price: 450, status: "available", image: "", bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
+  { id: "unreg-06", name: "Piglet #6",  sex: "Male",   dam: "Bluey", sire: "Coconut", dob: "", price: 450, status: "available", image: "", bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
+  { id: "unreg-07", name: "Piglet #7",  sex: "Female", dam: "Mia",   sire: "Coconut", dob: "", price: 450, status: "available", image: "", bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
+  { id: "unreg-08", name: "Piglet #8",  sex: "Male",   dam: "Mia",   sire: "Coconut", dob: "", price: 450, status: "available", image: "", bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
+  { id: "unreg-09", name: "Piglet #9",  sex: "Female", dam: "Mia",   sire: "Coconut", dob: "", price: 450, status: "available", image: "", bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
+  { id: "unreg-10", name: "Piglet #10", sex: "Male",   dam: "Mia",   sire: "Coconut", dob: "", price: 450, status: "available", image: "", bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
+  { id: "unreg-11", name: "Piglet #11", sex: "Female", dam: "Mia",   sire: "Coconut", dob: "", price: 450, status: "available", image: "", bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
+  { id: "unreg-12", name: "Piglet #12", sex: "Male",   dam: "Mia",   sire: "Coconut", dob: "", price: 450, status: "available", image: "", bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
+  { id: "unreg-13", name: "Piglet #13", sex: "Female", dam: "Indy",  sire: "Coconut", dob: "", price: 450, status: "available", image: "", bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
+  { id: "unreg-14", name: "Piglet #14", sex: "Male",   dam: "Indy",  sire: "Coconut", dob: "", price: 450, status: "available", image: "", bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
+  { id: "unreg-15", name: "Piglet #15", sex: "Female", dam: "Indy",  sire: "Coconut", dob: "", price: 450, status: "available", image: "", bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
+  { id: "unreg-16", name: "Piglet #16", sex: "Male",   dam: "Indy",  sire: "Coconut", dob: "", price: 450, status: "available", image: "", bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
+  { id: "unreg-17", name: "Piglet #17", sex: "Female", dam: "Indy",  sire: "Coconut", dob: "", price: 450, status: "available", image: "", bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
+  { id: "unreg-18", name: "Piglet #18", sex: "Male",   dam: "Indy",  sire: "Coconut", dob: "", price: 450, status: "available", image: "", bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" }
+];
+
+const RESERVE_EMAIL = "kunekune@thompsoncorral.com";
+
+function formatDob(iso) {
+  const d = new Date(iso + "T00:00:00");
+  if (isNaN(d)) return iso;
+  return d.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" });
+}
+
+function buyActionsHtml(pig) {
+  if (pig.status !== "available") {
+    return "";
+  }
+  const actions = [];
+
+  if (pig.stripeLink) {
+    actions.push(
+      `<a class="btn btn-barn btn-block" href="${pig.stripeLink}" target="_blank" rel="noopener">Buy Now — Card</a>`
+    );
+  }
+
+  if (pig.paypalButtonId) {
+    actions.push(`
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" rel="noopener">
+        <input type="hidden" name="cmd" value="_s-xclick" />
+        <input type="hidden" name="hosted_button_id" value="${pig.paypalButtonId}" />
+        <button type="submit" class="btn btn-outline-dark btn-block" style="border:2px solid var(--pasture);color:var(--pasture);background:transparent;">Buy Now — PayPal</button>
+      </form>
+    `);
+  }
+
+  if (!pig.stripeLink && !pig.paypalButtonId) {
+    const subject = pig.regNumber ? `Reserving ${pig.name} (${pig.regNumber})` : `Reserving ${pig.name}`;
+    actions.push(
+      `<a class="btn btn-barn btn-block" href="mailto:${RESERVE_EMAIL}?subject=${encodeURIComponent(subject)}">Email to Reserve</a>`
+    );
+  }
+
+  return `<div class="buy-actions">${actions.join("")}</div>`;
+}
+
+function statusTagHtml(pig) {
+  const label = pig.status === "available" ? "Available" : pig.status === "reserved" ? "Reserved" : "Sold";
+  return `<span class="status-tag status-${pig.status}">${label}</span>`;
+}
+
+function pigletCardHtml(pig) {
+  const photoHtml = pig.image
+    ? `<img src="${pig.image}" alt="${pig.name}, ${pig.sex.toLowerCase()} KuneKune piglet" loading="lazy" />`
+    : `<div class="registry-photo-placeholder">Photo Coming Soon</div>`;
+
+  const sealHtml = pig.regNumber
+    ? `<span class="registry-seal">AKKPS Registered</span>`
+    : `<span class="registry-seal">Unregistered</span>`;
+
+  const regRow = pig.regNumber ? `<div><span class="k">Reg #</span><span class="v">${pig.regNumber}</span></div>` : "";
+  const sireRow = pig.sire ? `<div><span class="k">Sire</span><span class="v">${pig.sire}</span></div>` : "";
+  const damRow = pig.dam ? `<div><span class="k">Dam</span><span class="v">${pig.dam}</span></div>` : "";
+  const dobRow = pig.dob ? `<div><span class="k">DOB</span><span class="v">${formatDob(pig.dob)}</span></div>` : "";
+
+  return `
+    <article class="registry-card">
+      <div class="registry-photo">
+        ${photoHtml}
+        ${sealHtml}
+      </div>
+      <div class="registry-body">
+        <div class="registry-name-row">
+          <h3 class="registry-name">${pig.name}</h3>
+          <span class="registry-role">${pig.sex}</span>
+        </div>
+        <p class="registry-bio">${pig.bio}</p>
+        <div class="registry-data">
+          ${regRow}
+          ${sireRow}
+          ${damRow}
+          ${dobRow}
+        </div>
+        <div class="registry-price">
+          <span class="amount">$${pig.price.toLocaleString()}</span>
+          ${statusTagHtml(pig)}
+        </div>
+        ${buyActionsHtml(pig)}
+      </div>
+    </article>
+  `;
+}
+
+function renderGrid(elId, list, emptyMessage) {
+  const el = document.getElementById(elId);
+  if (!el) return;
+  if (!list.length) {
+    el.innerHTML = `<p class="prose" style="text-align:center;">${emptyMessage}</p>`;
+    return;
+  }
+  el.innerHTML = list.map(pigletCardHtml).join("");
+}
+
+function renderPiglets() {
+  renderGrid("piglet-grid", PIGLETS, `No AKKPS-registered piglets currently listed — check back soon, or email ${RESERVE_EMAIL} to join the waitlist.`);
+  renderGrid("unregistered-grid", UNREGISTERED_PIGLETS, `No unregistered piglets currently listed — check back soon, or email ${RESERVE_EMAIL} to join the waitlist.`);
+}
+
+document.addEventListener("DOMContentLoaded", renderPiglets);
+
+  </script>
+</body>
+</html>
