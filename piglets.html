@@ -786,6 +786,8 @@ function pigletCardHtml(pig) {
     : `<span class="registry-seal">Unregistered</span>`;
 
   const regRow = pig.regNumber ? `<div><span class="k">Reg #</span><span class="v">${pig.regNumber}</span></div>` : "";
+  const sexRow = pig.sex ? `<div><span class="k">Sex</span><span class="v">${pig.sex}</span></div>` : "";
+  const wattlesRow = pig.wattles ? `<div><span class="k">Wattles</span><span class="v">${pig.wattles}</span></div>` : "";
   const sireRow = pig.sire ? `<div><span class="k">Sire</span><span class="v">${pig.sire}</span></div>` : "";
   const damRow = pig.dam ? `<div><span class="k">Dam</span><span class="v">${pig.dam}</span></div>` : "";
   const dobRow = pig.dob ? `<div><span class="k">DOB</span><span class="v">${formatDob(pig.dob)}</span></div>` : "";
@@ -805,6 +807,8 @@ function pigletCardHtml(pig) {
         <p class="registry-bio">${pig.bio}</p>
         <div class="registry-data">
           ${regRow}
+          ${sexRow}
+          ${wattlesRow}
           ${sireRow}
           ${damRow}
           ${dobRow}
