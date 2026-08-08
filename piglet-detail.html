@@ -943,6 +943,7 @@ function renderPigletDetail() {
   const damRow = pig.dam ? `<div><span class="k">Dam</span><span class="v">${pig.dam}</span></div>` : "";
   const dobRow = pig.dob ? `<div><span class="k">Birth Date</span><span class="v">${formatDob(pig.dob)}</span></div>` : "";
   const sexRow = `<div><span class="k">Sex</span><span class="v">${pig.sex}</span></div>`;
+  const wattlesRow = pig.wattles ? `<div><span class="k">Wattles</span><span class="v">${pig.wattles}</span></div>` : "";
 
   const parentsHtml = (pig.sire || pig.dam)
     ? `
@@ -976,8 +977,9 @@ function renderPigletDetail() {
         <p class="detail-tagline">${pig.regNumber ? "AKKPS-registered KuneKune piglet" : "Unregistered KuneKune piglet"} at Thompson Corral</p>
         <div class="detail-badges">${badges.join("")}</div>
         <div class="detail-facts">
-          ${sexRow}
           ${regRow}
+          ${sexRow}
+          ${wattlesRow}
           ${sireRow}
           ${damRow}
           ${dobRow}
