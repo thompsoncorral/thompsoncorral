@@ -34,6 +34,7 @@ const PIGLETS = [
     id: "clover",
     name: "Clover",
     sex: "Female",
+    wattles: "Double Wattled",
     regNumber: "AKKPS 99001",
     sire: "Coconut",
     dam: "Honey",
@@ -49,6 +50,7 @@ const PIGLETS = [
     id: "duke-jr",
     name: "Duke Jr",
     sex: "Male",
+    wattles: "Double Wattled",
     regNumber: "AKKPS 99002",
     sire: "Coconut",
     dam: "Honey",
@@ -64,6 +66,7 @@ const PIGLETS = [
     id: "rosie",
     name: "Rosie",
     sex: "Female",
+    wattles: "Double Wattled",
     regNumber: "AKKPS 99003",
     sire: "Coconut",
     dam: "Honey",
@@ -79,6 +82,7 @@ const PIGLETS = [
     id: "willow",
     name: "Willow",
     sex: "Female",
+    wattles: "Double Wattled",
     regNumber: "AKKPS 99004",
     sire: "Coconut",
     dam: "Honey",
@@ -96,7 +100,7 @@ const PIGLETS = [
    UNREGISTERED PIGLET INVENTORY
    ------------------------------------------------------------
    Same idea as above, but for piglets without AKKPS papers.
-   Most are placeholders — replace name, sex, dam, price, photos,
+   Most are placeholders — replace name, sex, wattles, dam, price, photos,
    and bio with the real details, and delete any entries you don't
    need. Each piglet can have up to 4 photos: fill in the "images"
    array with image paths/URLs in the order you want them shown
@@ -105,26 +109,26 @@ const PIGLETS = [
    ============================================================ */
 
 const UNREGISTERED_PIGLETS = [
-  { id: "tigress", name: "Tigress", sex: "Female", dam: "Bluey", sire: "Coconut", dob: "", price: 225, status: "available",
+  { id: "tigress", name: "Tigress", sex: "Female", wattles: "Double Wattled", dam: "Bluey", sire: "Coconut", dob: "", price: 225, status: "available",
     images: ["images/piglets/tigress-1.jpg", "images/piglets/tigress-2.jpg", "images/piglets/tigress-3.jpg", "images/piglets/tigress-4.jpg"],
     bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
-  { id: "shifu", name: "Shifu", sex: "Male", dam: "Bluey", sire: "Coconut", dob: "", price: 225, status: "available",
+  { id: "shifu", name: "Shifu", sex: "Male", wattles: "Double Wattled", dam: "Bluey", sire: "Coconut", dob: "", price: 225, status: "available",
     images: ["images/piglets/shifu-1.jpg", "images/piglets/shifu-2.jpg", "images/piglets/shifu-3.jpg", "images/piglets/shifu-4.jpg"],
     bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
-  { id: "unreg-bluey-3", name: "Piglet #3", sex: "Female", dam: "Bluey", sire: "Coconut", dob: "", price: 450, status: "available", images: [], bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
-  { id: "unreg-bluey-4", name: "Piglet #4", sex: "Male",   dam: "Bluey", sire: "Coconut", dob: "", price: 450, status: "available", images: [], bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
-  { id: "unreg-07", name: "Piglet #7",  sex: "Female", dam: "Mia",   sire: "Coconut", dob: "", price: 450, status: "available", images: [], bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
-  { id: "unreg-08", name: "Piglet #8",  sex: "Male",   dam: "Mia",   sire: "Coconut", dob: "", price: 450, status: "available", images: [], bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
-  { id: "unreg-09", name: "Piglet #9",  sex: "Female", dam: "Mia",   sire: "Coconut", dob: "", price: 450, status: "available", images: [], bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
-  { id: "unreg-10", name: "Piglet #10", sex: "Male",   dam: "Mia",   sire: "Coconut", dob: "", price: 450, status: "available", images: [], bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
-  { id: "unreg-11", name: "Piglet #11", sex: "Female", dam: "Mia",   sire: "Coconut", dob: "", price: 450, status: "available", images: [], bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
-  { id: "unreg-12", name: "Piglet #12", sex: "Male",   dam: "Mia",   sire: "Coconut", dob: "", price: 450, status: "available", images: [], bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
-  { id: "unreg-13", name: "Piglet #13", sex: "Female", dam: "Indy",  sire: "Coconut", dob: "", price: 450, status: "available", images: [], bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
-  { id: "unreg-14", name: "Piglet #14", sex: "Male",   dam: "Indy",  sire: "Coconut", dob: "", price: 450, status: "available", images: [], bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
-  { id: "unreg-15", name: "Piglet #15", sex: "Female", dam: "Indy",  sire: "Coconut", dob: "", price: 450, status: "available", images: [], bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
-  { id: "unreg-16", name: "Piglet #16", sex: "Male",   dam: "Indy",  sire: "Coconut", dob: "", price: 450, status: "available", images: [], bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
-  { id: "unreg-17", name: "Piglet #17", sex: "Female", dam: "Indy",  sire: "Coconut", dob: "", price: 450, status: "available", images: [], bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
-  { id: "unreg-18", name: "Piglet #18", sex: "Male",   dam: "Indy",  sire: "Coconut", dob: "", price: 450, status: "available", images: [], bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" }
+  { id: "unreg-bluey-3", name: "Piglet #3", sex: "Female", wattles: "Double Wattled", dam: "Bluey", sire: "Coconut", dob: "", price: 450, status: "available", images: [], bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
+  { id: "unreg-bluey-4", name: "Piglet #4", sex: "Male",   wattles: "Double Wattled", dam: "Bluey", sire: "Coconut", dob: "", price: 450, status: "available", images: [], bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
+  { id: "unreg-07", name: "Piglet #7",  sex: "Female", wattles: "Double Wattled", dam: "Mia",   sire: "Coconut", dob: "", price: 450, status: "available", images: [], bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
+  { id: "unreg-08", name: "Piglet #8",  sex: "Male",   wattles: "Double Wattled", dam: "Mia",   sire: "Coconut", dob: "", price: 450, status: "available", images: [], bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
+  { id: "unreg-09", name: "Piglet #9",  sex: "Female", wattles: "Double Wattled", dam: "Mia",   sire: "Coconut", dob: "", price: 450, status: "available", images: [], bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
+  { id: "unreg-10", name: "Piglet #10", sex: "Male",   wattles: "Double Wattled", dam: "Mia",   sire: "Coconut", dob: "", price: 450, status: "available", images: [], bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
+  { id: "unreg-11", name: "Piglet #11", sex: "Female", wattles: "Double Wattled", dam: "Mia",   sire: "Coconut", dob: "", price: 450, status: "available", images: [], bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
+  { id: "unreg-12", name: "Piglet #12", sex: "Male",   wattles: "Double Wattled", dam: "Mia",   sire: "Coconut", dob: "", price: 450, status: "available", images: [], bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
+  { id: "unreg-13", name: "Piglet #13", sex: "Female", wattles: "Double Wattled", dam: "Indy",  sire: "Coconut", dob: "", price: 450, status: "available", images: [], bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
+  { id: "unreg-14", name: "Piglet #14", sex: "Male",   wattles: "Double Wattled", dam: "Indy",  sire: "Coconut", dob: "", price: 450, status: "available", images: [], bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
+  { id: "unreg-15", name: "Piglet #15", sex: "Female", wattles: "Double Wattled", dam: "Indy",  sire: "Coconut", dob: "", price: 450, status: "available", images: [], bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
+  { id: "unreg-16", name: "Piglet #16", sex: "Male",   wattles: "Double Wattled", dam: "Indy",  sire: "Coconut", dob: "", price: 450, status: "available", images: [], bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
+  { id: "unreg-17", name: "Piglet #17", sex: "Female", wattles: "Double Wattled", dam: "Indy",  sire: "Coconut", dob: "", price: 450, status: "available", images: [], bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
+  { id: "unreg-18", name: "Piglet #18", sex: "Male",   wattles: "Double Wattled", dam: "Indy",  sire: "Coconut", dob: "", price: 450, status: "available", images: [], bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" }
 ];
 
 const RESERVE_EMAIL = "kunekune@thompsoncorral.com";
