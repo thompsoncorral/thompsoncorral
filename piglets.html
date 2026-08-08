@@ -488,6 +488,24 @@ a { color: inherit; }
     
     .registry-thumb:hover { border-color: var(--rust-light); }
     .registry-thumb.is-active { border-color: var(--rust); }
+
+.filter-banner {
+  background: var(--cream-deep);
+  border: 1px solid var(--tan-border);
+  border-radius: 8px;
+  padding: 14px 18px;
+  margin-bottom: 32px;
+  text-align: center;
+  font-size: 14.5px;
+}
+
+.filter-banner a {
+  font-weight: 700;
+  color: var(--rust);
+  border-bottom: 1px solid var(--rust);
+  text-decoration: none;
+  padding-bottom: 1px;
+}
     
     .registry-body { padding: 18px 18px 20px; }
 
@@ -690,14 +708,16 @@ a { color: inherit; }
 
   <section class="section" style="padding-top:56px;">
     <div class="wrap">
+      <div id="dam-filter-banner" style="display:none;"></div>
+
       <div class="section-head">
-        <p class="section-eyebrow">Currently Available</p>
-        <h2>AKKPS Registered Piglets</h2>
+        <p class="section-eyebrow" id="registered-eyebrow">Currently Available</p>
+        <h2 id="registered-heading">AKKPS Registered Piglets</h2>
         <p>All registered piglets go home wormed, with health records and registration paperwork. A non-refundable deposit reserves a piglet until pickup.</p>
       </div>
 
       <div id="piglet-grid" class="registry-grid" aria-live="polite">
-        <!-- Rendered by the PIGLETS array below -->
+        <!-- Rendered by the PIGLETS array in piglets-data.js -->
       </div>
     </div>
   </section>
@@ -705,13 +725,13 @@ a { color: inherit; }
   <section class="section section-alt">
     <div class="wrap">
       <div class="section-head">
-        <p class="section-eyebrow">Also Currently Available</p>
-        <h2>Unregistered Piglets</h2>
+        <p class="section-eyebrow" id="unregistered-eyebrow">Also Currently Available</p>
+        <h2 id="unregistered-heading">Unregistered Piglets</h2>
         <p>Healthy KuneKune piglets from our herd that aren't AKKPS-papered. Same care, same farm, no registration paperwork.</p>
       </div>
 
       <div id="unregistered-grid" class="registry-grid" aria-live="polite">
-        <!-- Rendered by the UNREGISTERED_PIGLETS array below -->
+        <!-- Rendered by the UNREGISTERED_PIGLETS array in piglets-data.js -->
       </div>
     </div>
   </section>
@@ -742,188 +762,24 @@ a { color: inherit; }
   </footer>
 
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="piglets-data.js"></script>
   <script>
-/* ============================================================
-   PIGLET INVENTORY
-   ------------------------------------------------------------
-   This is the ONLY file you need to edit to add, remove, sell,
-   or reprice a piglet. No HTML editing required.
-
-   For each piglet, fill in the fields below. Leave a payment
-   field EMPTY ("") if you haven't set it up yet — the card will
-   automatically fall back to an "Email to Reserve" button.
-
-   HOW TO GET A STRIPE PAYMENT LINK (no coding required):
-     1. Log into dashboard.stripe.com
-     2. Payment links -> + New
-     3. Set the product name (e.g. "Willow - KuneKune Piglet") and price
-     4. Save, copy the link (looks like https://buy.stripe.com/xxxxx)
-     5. Paste it into stripeLink below
-
-   HOW TO GET A PAYPAL "BUY NOW" BUTTON:
-     1. Log into paypal.com -> PayPal Buttons (paypal.com/buttons)
-     2. Create a "Buy Now" button for the piglet
-     3. PayPal gives you a "hosted_button_id" value
-     4. Paste ONLY that id into paypalButtonId below (not the whole snippet)
-
-   status options: "available", "reserved", "sold"
-   (reserved/sold piglets are shown but the buy buttons are hidden)
-   ============================================================ */
-
-const PIGLETS = [
-  {
-    id: "clover",
-    name: "Clover",
-    sex: "Female",
-    regNumber: "AKKPS 99001",
-    sire: "Coconut",
-    dam: "Honey",
-    dob: "2026-05-10",
-    price: 850,
-    status: "available",
-    images: ["https://static.wixstatic.com/media/d72fc0_bcb00a42d69f4464ac65140efa90f796~mv2.jpg/v1/fill/w_443,h_431,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/DSC_6269.jpg"],
-    bio: "Registered KuneKune gilt out of Thompson Corral's championship-line herd.",
-    stripeLink: "",
-    paypalButtonId: ""
-  },
-  {
-    id: "duke-jr",
-    name: "Duke Jr",
-    sex: "Male",
-    regNumber: "AKKPS 99002",
-    sire: "Coconut",
-    dam: "Honey",
-    dob: "2026-05-10",
-    price: 850,
-    status: "available",
-    images: ["https://static.wixstatic.com/media/d72fc0_e22c92de8f4245b58fd7d67cbf461780~mv2.jpg/v1/fill/w_443,h_431,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/DSC_6308_edited.jpg"],
-    bio: "Registered KuneKune boar piglet, named for his grand-sire's champion bloodline.",
-    stripeLink: "",
-    paypalButtonId: ""
-  },
-  {
-    id: "rosie",
-    name: "Rosie",
-    sex: "Female",
-    regNumber: "AKKPS 99003",
-    sire: "Coconut",
-    dam: "Honey",
-    dob: "2026-05-10",
-    price: 850,
-    status: "available",
-    images: ["https://static.wixstatic.com/media/d72fc0_e7345141a08e4d629a0a12090f3b059c~mv2.jpg/v1/fill/w_443,h_431,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/DSC_6308.jpg"],
-    bio: "Registered KuneKune gilt out of Thompson Corral's championship-line herd.",
-    stripeLink: "",
-    paypalButtonId: ""
-  },
-  {
-    id: "willow",
-    name: "Willow",
-    sex: "Female",
-    regNumber: "AKKPS 99004",
-    sire: "Coconut",
-    dam: "Honey",
-    dob: "2026-05-10",
-    price: 850,
-    status: "available",
-    images: ["https://static.wixstatic.com/media/d72fc0_d86e2d82713d4c0a8899aaf82e4b84fc~mv2.jpg/v1/fill/w_443,h_431,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/DSC_6263.jpg"],
-    bio: "Registered KuneKune gilt out of Thompson Corral's championship-line herd.",
-    stripeLink: "",
-    paypalButtonId: ""
-  }
-];
-
-/* ============================================================
-   UNREGISTERED PIGLET INVENTORY
-   ------------------------------------------------------------
-   Same idea as above, but for piglets without AKKPS papers.
-      Most are placeholders — replace name, sex, dam, price, photos,
-         and bio with the real details, and delete any entries you don't
-            need. Each piglet can have up to 4 photos: fill in the "images"
-               array with image paths/URLs in the order you want them shown
-                  (the first one is the main photo). Leave "images" as an empty
-                     array ([]) until you have real photos.
-   ============================================================ */
-
-const UNREGISTERED_PIGLETS = [  { id: "tigress", name: "Tigress", sex: "Female", dam: "Bluey", sire: "Coconut", dob: "", price: 225, status: "available",
-                                     images: ["images/piglets/tigress-1.jpg", "images/piglets/tigress-2.jpg", "images/piglets/tigress-3.jpg", "images/piglets/tigress-4.jpg"],
-                                     bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
-                              { id: "shifu", name: "Shifu", sex: "Male", dam: "Bluey", sire: "Coconut", dob: "", price: 225, status: "available",
-        images: ["images/piglets/shifu-1.jpg", "images/piglets/shifu-2.jpg", "images/piglets/shifu-3.jpg", "images/piglets/shifu-4.jpg"],
-                                   bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
-                              { id: "unreg-bluey-3", name: "Piglet #3", sex: "Female", dam: "Bluey", sire: "Coconut", dob: "", price: 450, status: "available", images: [], bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
-                              { id: "unreg-bluey-4", name: "Piglet #4", sex: "Male",   dam: "Bluey", sire: "Coconut", dob: "", price: 450, status: "available", images: [], bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
-                              { id: "unreg-07", name: "Piglet #7",  sex: "Female", dam: "Mia",   sire: "Coconut", dob: "", price: 450, status: "available", images: [], bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
-                              { id: "unreg-08", name: "Piglet #8",  sex: "Male",   dam: "Mia",   sire: "Coconut", dob: "", price: 450, status: "available", images: [], bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
-                              { id: "unreg-09", name: "Piglet #9",  sex: "Female", dam: "Mia",   sire: "Coconut", dob: "", price: 450, status: "available", images: [], bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
-                              { id: "unreg-10", name: "Piglet #10", sex: "Male",   dam: "Mia",   sire: "Coconut", dob: "", price: 450, status: "available", images: [], bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
-                              { id: "unreg-11", name: "Piglet #11", sex: "Female", dam: "Mia",   sire: "Coconut", dob: "", price: 450, status: "available", images: [], bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
-                              { id: "unreg-12", name: "Piglet #12", sex: "Male",   dam: "Mia",   sire: "Coconut", dob: "", price: 450, status: "available", images: [], bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
-                              { id: "unreg-13", name: "Piglet #13", sex: "Female", dam: "Indy",  sire: "Coconut", dob: "", price: 450, status: "available", images: [], bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
-                              { id: "unreg-14", name: "Piglet #14", sex: "Male",   dam: "Indy",  sire: "Coconut", dob: "", price: 450, status: "available", images: [], bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
-                              { id: "unreg-15", name: "Piglet #15", sex: "Female", dam: "Indy",  sire: "Coconut", dob: "", price: 450, status: "available", images: [], bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
-                              { id: "unreg-16", name: "Piglet #16", sex: "Male",   dam: "Indy",  sire: "Coconut", dob: "", price: 450, status: "available", images: [], bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
-                              { id: "unreg-17", name: "Piglet #17", sex: "Female", dam: "Indy",  sire: "Coconut", dob: "", price: 450, status: "available", images: [], bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
-                              { id: "unreg-18", name: "Piglet #18", sex: "Male",   dam: "Indy",  sire: "Coconut", dob: "", price: 450, status: "available", images: [], bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" }
-                              ];
-
-const RESERVE_EMAIL = "kunekune@thompsoncorral.com";
-
-function formatDob(iso) {
-  const d = new Date(iso + "T00:00:00");
-  if (isNaN(d)) return iso;
-  return d.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" });
-}
-
-function buyActionsHtml(pig) {
-  if (pig.status !== "available") {
-    return "";
-  }
-  const actions = [];
-
-  if (pig.stripeLink) {
-    actions.push(
-      `<a class="btn btn-barn btn-block" href="${pig.stripeLink}" target="_blank" rel="noopener">Buy Now — Card</a>`
-    );
-  }
-
-  if (pig.paypalButtonId) {
-    actions.push(`
-      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" rel="noopener">
-        <input type="hidden" name="cmd" value="_s-xclick" />
-        <input type="hidden" name="hosted_button_id" value="${pig.paypalButtonId}" />
-        <button type="submit" class="btn btn-outline-dark btn-block" style="border:2px solid var(--pasture);color:var(--pasture);background:transparent;">Buy Now — PayPal</button>
-      </form>
-    `);
-  }
-
-  if (!pig.stripeLink && !pig.paypalButtonId) {
-    const subject = pig.regNumber ? `Reserving ${pig.name} (${pig.regNumber})` : `Reserving ${pig.name}`;
-    actions.push(
-      `<a class="btn btn-barn btn-block" href="mailto:${RESERVE_EMAIL}?subject=${encodeURIComponent(subject)}">Email to Reserve</a>`
-    );
-  }
-
-  return `<div class="buy-actions">${actions.join("")}</div>`;
-}
-
-function statusTagHtml(pig) {
-  const label = pig.status === "available" ? "Available" : pig.status === "reserved" ? "Reserved" : "Sold";
-  return `<span class="status-tag status-${pig.status}">${label}</span>`;
+function getQueryParam(name) {
+  return new URLSearchParams(window.location.search).get(name);
 }
 
 function pigletCardHtml(pig) {
-    const images = pig.images || [];
-    const photoHtml = images.length
-      ? `<img src="${images[0]}" alt="${pig.name}, ${pig.sex.toLowerCase()} KuneKune piglet" loading="lazy" class="registry-main-photo" />`
-          : `<div class="registry-photo-placeholder">Photo Coming Soon</div>`;
+  const images = pig.images || [];
+  const photoHtml = images.length
+    ? `<img src="${images[0]}" alt="${pig.name}, ${pig.sex.toLowerCase()} KuneKune piglet" loading="lazy" class="registry-main-photo" />`
+    : `<div class="registry-photo-placeholder">Photo Coming Soon</div>`;
 
-    const thumbsHtml = images.length > 1
-      ? `<div class="registry-thumbs">${images.map((src, i) => `
-              <button type="button" class="registry-thumb${i === 0 ? " is-active" : ""}" data-src="${src}" aria-label="Show photo ${i + 1} of ${pig.name}">
-            <img src="${src}" alt="" loading="lazy" />
-                                              </button>`).join("")}</div>`
-        : "";
+  const thumbsHtml = images.length > 1
+    ? `<div class="registry-thumbs">${images.map((src, i) => `
+        <button type="button" class="registry-thumb${i === 0 ? " is-active" : ""}" data-src="${src}" aria-label="Show photo ${i + 1} of ${pig.name}">
+          <img src="${src}" alt="" loading="lazy" />
+        </button>`).join("")}</div>`
+    : "";
 
   const sealHtml = pig.regNumber
     ? `<span class="registry-seal">AKKPS Registered</span>`
@@ -940,7 +796,7 @@ function pigletCardHtml(pig) {
         ${photoHtml}
         ${sealHtml}
       </div>
-              ${thumbsHtml}
+      ${thumbsHtml}
       <div class="registry-body">
         <div class="registry-name-row">
           <h3 class="registry-name">${pig.name}</h3>
@@ -956,6 +812,9 @@ function pigletCardHtml(pig) {
         <div class="registry-price">
           <span class="amount">$${pig.price.toLocaleString()}</span>
           ${statusTagHtml(pig)}
+        </div>
+        <div class="buy-actions more-info-row">
+          <a class="btn btn-outline btn-block" href="piglet-detail.html?id=${encodeURIComponent(pig.id)}">More Info</a>
         </div>
         ${buyActionsHtml(pig)}
       </div>
@@ -974,23 +833,60 @@ function renderGrid(elId, list, emptyMessage) {
 }
 
 function renderPiglets() {
-  renderGrid("piglet-grid", PIGLETS, `No AKKPS-registered piglets currently listed — check back soon, or email ${RESERVE_EMAIL} to join the waitlist.`);
-  renderGrid("unregistered-grid", UNREGISTERED_PIGLETS, `No unregistered piglets currently listed — check back soon, or email ${RESERVE_EMAIL} to join the waitlist.`);
+  const damFilter = getQueryParam("dam");
+  const banner = document.getElementById("dam-filter-banner");
+
+  let piglets = PIGLETS;
+  let unregistered = UNREGISTERED_PIGLETS;
+  let regEyebrow = "Currently Available";
+  let regHeading = "AKKPS Registered Piglets";
+  let unregEyebrow = "Also Currently Available";
+  let unregHeading = "Unregistered Piglets";
+  let regEmpty = `No AKKPS-registered piglets currently listed — check back soon, or email ${RESERVE_EMAIL} to join the waitlist.`;
+  let unregEmpty = `No unregistered piglets currently listed — check back soon, or email ${RESERVE_EMAIL} to join the waitlist.`;
+
+  if (damFilter) {
+    piglets = PIGLETS.filter((p) => p.dam && p.dam.toLowerCase() === damFilter.toLowerCase());
+    unregistered = UNREGISTERED_PIGLETS.filter((p) => p.dam && p.dam.toLowerCase() === damFilter.toLowerCase());
+    regEyebrow = "Showing Only";
+    regHeading = `${damFilter}'s Registered Piglets`;
+    unregEyebrow = "Showing Only";
+    unregHeading = `${damFilter}'s Unregistered Piglets`;
+    regEmpty = `${damFilter} has no AKKPS-registered piglets currently listed. <a href="piglets.html">View All Piglets</a>.`;
+    unregEmpty = `${damFilter} has no unregistered piglets currently listed. <a href="piglets.html">View All Piglets</a>.`;
+    if (banner) {
+      banner.innerHTML = `<p style="margin:0;">Showing only <strong>${damFilter}'s</strong> piglets. <a href="piglets.html">View All Piglets</a></p>`;
+      banner.className = "filter-banner";
+      banner.style.display = "block";
+    }
+    document.title = `${damFilter}'s Piglets | Thompson Corral`;
+  } else if (banner) {
+    banner.style.display = "none";
+    banner.innerHTML = "";
+  }
+
+  document.getElementById("registered-eyebrow").textContent = regEyebrow;
+  document.getElementById("registered-heading").textContent = regHeading;
+  document.getElementById("unregistered-eyebrow").textContent = unregEyebrow;
+  document.getElementById("unregistered-heading").textContent = unregHeading;
+
+  renderGrid("piglet-grid", piglets, regEmpty);
+  renderGrid("unregistered-grid", unregistered, unregEmpty);
 }
 
 document.addEventListener("DOMContentLoaded", renderPiglets);
 
-    /* Photo gallery: clicking a thumbnail swaps the main photo for that piglet's card. */
-    document.addEventListener("click", (event) => {
-        const thumb = event.target.closest(".registry-thumb");
-        if (!thumb) return;
-        const card = thumb.closest(".registry-card");
-        const mainPhoto = card && card.querySelector(".registry-main-photo");
-        if (!mainPhoto || !thumb.dataset.src) return;
-        mainPhoto.src = thumb.dataset.src;
-        card.querySelectorAll(".registry-thumb").forEach((t) => t.classList.remove("is-active"));
-        thumb.classList.add("is-active");
-    });
+/* Photo gallery: clicking a thumbnail swaps the main photo for that piglet's card. */
+document.addEventListener("click", (event) => {
+  const thumb = event.target.closest(".registry-thumb");
+  if (!thumb) return;
+  const card = thumb.closest(".registry-card");
+  const mainPhoto = card && card.querySelector(".registry-main-photo");
+  if (!mainPhoto || !thumb.dataset.src) return;
+  mainPhoto.src = thumb.dataset.src;
+  card.querySelectorAll(".registry-thumb").forEach((t) => t.classList.remove("is-active"));
+  thumb.classList.add("is-active");
+});
 
   </script>
 </body>
