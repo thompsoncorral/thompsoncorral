@@ -795,6 +795,8 @@ function pigletCardHtml(pig) {
   const wattlesRow = pig.wattles ? `<div><span class="k">Wattles</span><span class="v">${pig.wattles}</span></div>` : "";
   const sireRow = pig.sire ? `<div><span class="k">Sire</span><span class="v">${pig.sire}</span></div>` : "";
   const damRow = pig.dam ? `<div><span class="k">Dam</span><span class="v">${pig.dam}</span></div>` : "";
+  const coi = getCoi(pig);
+  const coiRow = coi ? `<div><span class="k">COI</span><span class="v">${coi}%</span></div>` : "";
   const dobRow = pig.dob ? `<div><span class="k">DOB</span><span class="v">${formatDob(pig.dob)}</span></div>` : "";
 
   return `
@@ -817,6 +819,7 @@ function pigletCardHtml(pig) {
           ${wattlesRow}
           ${sireRow}
           ${damRow}
+          ${coiRow}
           ${dobRow}
         </div>
         <div class="registry-price">
