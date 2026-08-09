@@ -30,74 +30,31 @@
    ============================================================ */
 
 const PIGLETS = [
+  /* No AKKPS-registered piglets currently listed — the page will automatically
+     show "No AKKPS-registered piglets currently listed..." until you add one.
+
+     To list a registered piglet, add an object here (copy the example below,
+     uncomment it, and fill in the real details) — it'll appear on piglets.html
+     and get its own "More Info" page automatically, no other editing needed.
+
   {
-    id: "clover",
-    name: "Clover",
-    sex: "Female",
-    fixedStatus: "Intact",
+    id: "example-id",              // unique — used in the piglet-detail.html link
+    name: "Example Name",
+    sex: "Female",                 // "Male" or "Female"
+    fixedStatus: "Intact",         // "Intact" or "Castrated"
     wattles: "Double Wattled",
-    regNumber: "AKKPS 99001",
+    regNumber: "AKKPS 12345",
     sire: "Coconut",
     dam: "Honey",
-    dob: "2026-05-10",
+    dob: "2026-06-01",             // YYYY-MM-DD
     price: 850,
-    status: "available",
-    images: ["https://static.wixstatic.com/media/d72fc0_bcb00a42d69f4464ac65140efa90f796~mv2.jpg/v1/fill/w_443,h_431,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/DSC_6269.jpg"],
-    bio: "Registered KuneKune gilt out of Thompson Corral's championship-line herd.",
-    stripeLink: "",
-    paypalButtonId: ""
-  },
-  {
-    id: "duke-jr",
-    name: "Duke Jr",
-    sex: "Male",
-    fixedStatus: "Castrated",
-    wattles: "Double Wattled",
-    regNumber: "AKKPS 99002",
-    sire: "Coconut",
-    dam: "Honey",
-    dob: "2026-05-10",
-    price: 850,
-    status: "available",
-    images: ["https://static.wixstatic.com/media/d72fc0_e22c92de8f4245b58fd7d67cbf461780~mv2.jpg/v1/fill/w_443,h_431,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/DSC_6308_edited.jpg"],
-    bio: "Registered KuneKune boar piglet, named for his grand-sire's champion bloodline.",
-    stripeLink: "",
-    paypalButtonId: ""
-  },
-  {
-    id: "rosie",
-    name: "Rosie",
-    sex: "Female",
-    fixedStatus: "Intact",
-    wattles: "Double Wattled",
-    regNumber: "AKKPS 99003",
-    sire: "Coconut",
-    dam: "Honey",
-    dob: "2026-05-10",
-    price: 850,
-    status: "available",
-    images: ["https://static.wixstatic.com/media/d72fc0_e7345141a08e4d629a0a12090f3b059c~mv2.jpg/v1/fill/w_443,h_431,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/DSC_6308.jpg"],
-    bio: "Registered KuneKune gilt out of Thompson Corral's championship-line herd.",
-    stripeLink: "",
-    paypalButtonId: ""
-  },
-  {
-    id: "willow",
-    name: "Willow",
-    sex: "Female",
-    fixedStatus: "Intact",
-    wattles: "Double Wattled",
-    regNumber: "AKKPS 99004",
-    sire: "Coconut",
-    dam: "Honey",
-    dob: "2026-05-10",
-    price: 850,
-    status: "available",
-    images: ["https://static.wixstatic.com/media/d72fc0_d86e2d82713d4c0a8899aaf82e4b84fc~mv2.jpg/v1/fill/w_443,h_431,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/DSC_6263.jpg"],
-    bio: "Registered KuneKune gilt out of Thompson Corral's championship-line herd.",
+    status: "available",           // "available", "reserved", or "sold"
+    images: ["https://..."],
+    bio: "Registered KuneKune piglet out of Thompson Corral's herd.",
     stripeLink: "",
     paypalButtonId: ""
   }
+  */
 ];
 
 /* ============================================================
