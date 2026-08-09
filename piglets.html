@@ -448,9 +448,10 @@ a { color: inherit; }
   aspect-ratio: 4 / 3.2;
   overflow: hidden;
   border-bottom: 1px solid var(--tan-border);
+  background: var(--cream-deep);
 }
 
-.registry-photo img { width: 100%; height: 100%; object-fit: cover; }
+.registry-photo img { width: 100%; height: 100%; object-fit: contain; }
 
 .registry-seal {
   position: absolute;
@@ -484,7 +485,7 @@ a { color: inherit; }
         transition: border-color 0.15s ease;
     }
     
-    .registry-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .registry-thumb img { width: 100%; height: 100%; object-fit: contain; display: block; }
     
     .registry-thumb:hover { border-color: var(--rust-light); }
     .registry-thumb.is-active { border-color: var(--rust); }
