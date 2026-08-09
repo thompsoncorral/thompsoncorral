@@ -170,6 +170,20 @@ const PARENT_DETAILS = {
   }
 };
 
+/* Coefficient of Inbreeding (COI%) for a litter, based on its sire/dam pairing.
+   Honey and Peaches are full sisters, so a Coconut x Honey litter and a
+   Coconut x Peaches litter carry the same COI%. Add more "Sire|Dam" pairings
+   here as needed — piglets whose pairing isn't listed just omit the row. */
+const COI_BY_PAIRING = {
+  "Coconut|Honey": "3.2816",
+  "Coconut|Peaches": "3.2816"
+};
+
+function getCoi(pig) {
+  if (!pig.sire || !pig.dam) return null;
+  return COI_BY_PAIRING[`${pig.sire}|${pig.dam}`] || null;
+}
+
 function findPiglet(id) {
   if (!id) return null;
   return PIGLETS.find((p) => p.id === id) || UNREGISTERED_PIGLETS.find((p) => p.id === id) || null;
