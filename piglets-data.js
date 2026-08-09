@@ -143,8 +143,9 @@ const RESERVE_EMAIL = "kunekune@thompsoncorral.com";
 const PARENT_PHOTOS = {
   "Coconut": "https://static.wixstatic.com/media/d72fc0_d86e2d82713d4c0a8899aaf82e4b84fc~mv2.jpg/v1/fill/w_443,h_431,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/DSC_6263.jpg",
   "Bluey": "https://static.wixstatic.com/media/d72fc0_fe4748d8e24a4bafa123f573460a12aa~mv2.jpg/v1/fill/w_368,h_515,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/d72fc0_fe4748d8e24a4bafa123f573460a12aa~mv2.jpg",
-  "Mia": "https://static.wixstatic.com/media/d72fc0_51126eca4ed947a39bf5f4e9550bff9d~mv2.jpg/v1/fill/w_368,h_436,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/d72fc0_51126eca4ed947a39bf5f4e9550bff9d~mv2.jpg",
-  "Indy": "https://static.wixstatic.com/media/d72fc0_bcb00a42d69f4464ac65140efa90f796~mv2.jpg/v1/fill/w_600,h_400,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/d72fc0_bcb00a42d69f4464ac65140efa90f796~mv2.jpg"
+  "Mia": "https://static.wixstatic.com/media/d72fc0_51126eca4ed947a39bf5f4e9550bff9d~mv2.jpg/v1/fill/w_368,h_436,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/d72fc0_51126eca4ed947a39bf5f4e9550bff9d~mv2.jpg"
+  /* "Indy" intentionally omitted — no confirmed photo yet, so her parent
+     card and kunekune.html card both show a "Photo Coming Soon" placeholder. */
 };
 
 /* Registry details for parents that have a full AKKPS record on file.
