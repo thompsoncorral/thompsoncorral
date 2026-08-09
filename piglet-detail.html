@@ -971,6 +971,8 @@ function renderPigletDetail() {
   const regRow = pig.regNumber ? `<div><span class="k">Reg #</span><span class="v">${pig.regNumber}</span></div>` : "";
   const sireRow = pig.sire ? `<div><span class="k">Sire</span><span class="v">${pig.sire}</span></div>` : "";
   const damRow = pig.dam ? `<div><span class="k">Dam</span><span class="v">${pig.dam}</span></div>` : "";
+  const coi = getCoi(pig);
+  const coiRow = coi ? `<div><span class="k">COI</span><span class="v">${coi}%</span></div>` : "";
   const dobRow = pig.dob ? `<div><span class="k">Birth Date</span><span class="v">${formatDob(pig.dob)}</span></div>` : "";
   const sexRow = `<div><span class="k">Sex</span><span class="v">${pig.sex}</span></div>`;
   const statusRow = pig.fixedStatus ? `<div><span class="k">Status</span><span class="v">${pig.fixedStatus}</span></div>` : "";
@@ -1013,6 +1015,7 @@ function renderPigletDetail() {
           ${wattlesRow}
           ${sireRow}
           ${damRow}
+          ${coiRow}
           ${dobRow}
         </div>
         <div class="detail-price-row">
