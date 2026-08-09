@@ -710,28 +710,32 @@ a { color: inherit; }
     <div class="wrap">
       <div id="dam-filter-banner" style="display:none;"></div>
 
-      <div class="section-head">
-        <p class="section-eyebrow" id="registered-eyebrow">Currently Available</p>
-        <h2 id="registered-heading">AKKPS Registered Piglets</h2>
-        <p>All registered piglets go home wormed, with health records and registration paperwork. A non-refundable deposit reserves a piglet until pickup.</p>
-      </div>
+      <div id="registered-section-content">
+        <div class="section-head">
+          <p class="section-eyebrow" id="registered-eyebrow">Currently Available</p>
+          <h2 id="registered-heading">AKKPS Registered Piglets</h2>
+          <p>All registered piglets go home wormed, with health records and registration paperwork. A non-refundable deposit reserves a piglet until pickup.</p>
+        </div>
 
-      <div id="piglet-grid" class="registry-grid" aria-live="polite">
-        <!-- Rendered by the PIGLETS array in piglets-data.js -->
+        <div id="piglet-grid" class="registry-grid" aria-live="polite">
+          <!-- Rendered by the PIGLETS array in piglets-data.js -->
+        </div>
       </div>
     </div>
   </section>
 
   <section class="section section-alt">
     <div class="wrap">
-      <div class="section-head">
-        <p class="section-eyebrow" id="unregistered-eyebrow">Also Currently Available</p>
-        <h2 id="unregistered-heading">Unregistered Piglets</h2>
-        <p>Healthy KuneKune piglets from our herd that aren't AKKPS-papered. Same care, same farm, no registration paperwork.</p>
-      </div>
+      <div id="unregistered-section-content">
+        <div class="section-head">
+          <p class="section-eyebrow" id="unregistered-eyebrow">Also Currently Available</p>
+          <h2 id="unregistered-heading">Unregistered Piglets</h2>
+          <p>Healthy KuneKune piglets from our herd that aren't AKKPS-papered. Same care, same farm, no registration paperwork.</p>
+        </div>
 
-      <div id="unregistered-grid" class="registry-grid" aria-live="polite">
-        <!-- Rendered by the UNREGISTERED_PIGLETS array in piglets-data.js -->
+        <div id="unregistered-grid" class="registry-grid" aria-live="polite">
+          <!-- Rendered by the UNREGISTERED_PIGLETS array in piglets-data.js -->
+        </div>
       </div>
     </div>
   </section>
@@ -876,6 +880,20 @@ function renderPiglets() {
 
   renderGrid("piglet-grid", piglets, regEmpty);
   renderGrid("unregistered-grid", unregistered, unregEmpty);
+
+  /* When viewing a single dam's piglets, a dam is either registered or
+     unregistered stock — she'll never have offspring in the other bucket.
+     So when filtered, hide whichever side has zero matches entirely
+     (heading, description, and empty-state text and all) instead of
+     showing a "no piglets" message for a category that will never apply. */
+  const registeredContent = document.getElementById("registered-section-content");
+  const unregisteredContent = document.getElementById("unregistered-section-content");
+  if (registeredContent) {
+    registeredContent.style.display = damFilter && !piglets.length ? "none" : "";
+  }
+  if (unregisteredContent) {
+    unregisteredContent.style.display = damFilter && !unregistered.length ? "none" : "";
+  }
 }
 
 document.addEventListener("DOMContentLoaded", renderPiglets);
