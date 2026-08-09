@@ -147,6 +147,29 @@ const PARENT_PHOTOS = {
   "Indy": "https://static.wixstatic.com/media/d72fc0_bcb00a42d69f4464ac65140efa90f796~mv2.jpg/v1/fill/w_600,h_400,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/d72fc0_bcb00a42d69f4464ac65140efa90f796~mv2.jpg"
 };
 
+/* Registry details for parents that have a full AKKPS record on file.
+   Shown on each piglet's "More Info" page under Parentage, for whichever
+   parent (sire and/or dam) has an entry here — parents without an entry
+   (e.g. unregistered dams like Bluey/Mia/Indy) just show name + photo. */
+const PARENT_DETAILS = {
+  "Coconut": {
+    regName: "Broken H Farm Whakanui 1",
+    wattles: "Double Wattled",
+    dob: "2024-02-28",
+    color: "Cream",
+    bloodlines: "Whakanui / Haunene",
+    regNumber: "AKKPS 57040"
+  },
+  "Honey": {
+    regName: "Big Springs Farm Wilsons Gina 1",
+    wattles: "Double Wattled",
+    dob: "2025-04-20",
+    color: "Ginger / White",
+    bloodlines: "Ru / Tonganui",
+    regNumber: "AKKPS 57952"
+  }
+};
+
 function findPiglet(id) {
   if (!id) return null;
   return PIGLETS.find((p) => p.id === id) || UNREGISTERED_PIGLETS.find((p) => p.id === id) || null;
