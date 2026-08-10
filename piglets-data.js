@@ -72,7 +72,7 @@ const PIGLETS = [
 const UNREGISTERED_PIGLETS = [
   { id: "tigress", name: "Tigress", sex: "Female", fixedStatus: "Intact", wattles: "Double Wattled", dam: "Bluey", sire: "Coconut", dob: "", price: 225, status: "available",
     images: ["images/piglets/tigress-1.jpg", "images/piglets/tigress-2.jpg", "images/piglets/tigress-3.jpg", "images/piglets/tigress-4.jpg"],
-    bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
+    bio: "Tigress is one of our friendliest piglets — sweet-natured, curious, and always eager to say hello. She loves a good belly rub and genuinely enjoys being around people, making her a great fit for a family looking for an affectionate companion.", stripeLink: "", paypalButtonId: "" },
   { id: "shifu", name: "Shifu", sex: "Male", fixedStatus: "Castrated", wattles: "Double Wattled", dam: "Bluey", sire: "Coconut", dob: "", price: 225, status: "available",
     images: ["images/piglets/shifu-1.jpg", "images/piglets/shifu-2.jpg", "images/piglets/shifu-3.jpg", "images/piglets/shifu-4.jpg"],
     bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
