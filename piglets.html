@@ -835,6 +835,13 @@ function pigletCardHtml(pig) {
   `;
 }
 
+/* Only piglets with at least one real photo are shown on the site — a piglet
+   added to the data file before its photos are ready (images: []) simply
+   stays off the page until photos are filled in, no other editing needed. */
+function hasPhotos(pig) {
+  return Array.isArray(pig.images) && pig.images.length > 0;
+}
+
 function renderGrid(elId, list, emptyMessage) {
   const el = document.getElementById(elId);
   if (!el) return;
@@ -849,8 +856,8 @@ function renderPiglets() {
   const damFilter = getQueryParam("dam");
   const banner = document.getElementById("dam-filter-banner");
 
-  let piglets = PIGLETS;
-  let unregistered = UNREGISTERED_PIGLETS;
+  let piglets = PIGLETS.filter(hasPhotos);
+  let unregistered = UNREGISTERED_PIGLETS.filter(hasPhotos);
   let regEyebrow = "Currently Available";
   let regHeading = "AKKPS Registered Piglets";
   let unregEyebrow = "Also Currently Available";
@@ -859,8 +866,8 @@ function renderPiglets() {
   let unregEmpty = `No unregistered piglets currently listed — check back soon, or email ${RESERVE_EMAIL} to join the waitlist.`;
 
   if (damFilter) {
-    piglets = PIGLETS.filter((p) => p.dam && p.dam.toLowerCase() === damFilter.toLowerCase());
-    unregistered = UNREGISTERED_PIGLETS.filter((p) => p.dam && p.dam.toLowerCase() === damFilter.toLowerCase());
+    piglets = piglets.filter((p) => p.dam && p.dam.toLowerCase() === damFilter.toLowerCase());
+    unregistered = unregistered.filter((p) => p.dam && p.dam.toLowerCase() === damFilter.toLowerCase());
     regEyebrow = "Showing Only";
     regHeading = `${damFilter}'s Registered Piglets`;
     unregEyebrow = "Showing Only";
