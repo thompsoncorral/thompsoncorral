@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KuneKune 101 | Thompson Corral</title>
+  <meta name="description" content="A bite-sized guide to KuneKune pigs — origin, temperament, colors, wattles, size, breeding, and more, from Thompson Corral." />
+  <style>
+  /* ============================================================
+     Thompson Corral — Option B: Warm Farmhouse
+     Palette: cream #FBF6EE · tan border #E4D3B4 · brown ink #3B2E22
+              rust accent #A6522E · card white #FFFFFF
+     Type:    Georgia (headings) · system sans (body)
+     ============================================================ */
+
+  :root {
+    --cream: #FBF6EE;
+    --cream-deep: #F3E9D6;
+    --tan-border: #E4D3B4;
+    --ink: #3B2E22;
+    --ink-soft: #6B5B48;
+    --rust: #A6522E;
+    --rust-light: #C06B41;
+    --white: #FFFFFF;
+
+    --font-display: Georgia, 'Times New Roman', serif;
+    --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img { max-width: 100%; display: block; }
+
+  a { color: inherit; }
+
+  :focus-visible {
+    outline: 3px solid var(--rust);
+    outline-offset: 2px;
+  }
+
+  .wrap {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ---------- Header / nav ---------- */
+
+  .site-header {
+    background: var(--cream);
+    border-bottom: 2px solid var(--tan-border);
+  }
+
+  .site-header .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 72px;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--ink);
+  }
+
+  .brand-mark {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 2px solid var(--rust);
+    display: grid;
+    place-items: center;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--rust);
+    flex-shrink: 0;
+  }
+
+  .brand-text {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 20px;
+  }
+
+  .brand-text small {
+    display: block;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-top: 1px;
+  }
+
+  .main-nav {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+  }
+
+  .main-nav a {
+    text-decoration: none;
+    color: var(--ink);
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 14px;
+    border-radius: 5px;
+    transition: background 0.15s ease;
+  }
+
+  .main-nav a:hover { background: var(--cream-deep); }
+
+  .main-nav a.current {
+    color: var(--white);
+    background: var(--rust);
+  }
+
+  /* ---------- Hero ---------- */
+
+  .hero {
+    text-align: center;
+    padding: 56px 24px 44px;
+    border-bottom: 2px solid var(--tan-border);
+  }
+
+  .hero-eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--rust);
+    margin: 0 0 14px;
+  }
+
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4.5vw, 3.2rem);
+    line-height: 1.1;
+    margin: 0 0 16px;
+    color: var(--ink);
+  }
+
+  .hero p {
+    max-width: 580px;
+    margin: 0 auto 0;
+    font-size: 16px;
+    color: var(--ink-soft);
+  }
+
+  /* ---------- Sections ---------- */
+
+  .section { padding: 56px 0; }
+
+  .section-alt { background: var(--cream-deep); }
+
+  .section-head {
+    max-width: 720px;
+    margin: 0 auto 28px;
+    text-align: center;
+  }
+
+  .section-head h2 {
+    font-family: var(--font-display);
+    font-size: clamp(1.4rem, 2.6vw, 1.8rem);
+    margin: 0 0 6px;
+    color: var(--ink);
+  }
+
+  .section-head p { color: var(--ink-soft); margin: 0; }
+
+  /* ---------- Educational cards ---------- */
+
+  .edu-grid {
+    max-width: 980px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+    align-items: start;
+  }
+
+  .edu-card {
+    background: var(--white);
+    border: 1px solid var(--tan-border);
+    border-radius: 16px;
+    padding: 26px 22px;
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "icon" "title" "answer";
+    justify-items: center;
+    text-align: center;
+    row-gap: 10px;
+    transition: grid-template-columns 0.45s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+
+  .edu-card:hover {
+    border-color: var(--rust-light);
+    box-shadow: 0 4px 14px rgba(59, 46, 34, 0.08);
+  }
+
+  .edu-card.is-open {
+    grid-template-columns: 76px 1fr;
+    grid-template-areas: "icon title" "icon answer";
+    justify-items: start;
+    text-align: left;
+    column-gap: 18px;
+    row-gap: 6px;
+  }
+
+  .edu-icon {
+    grid-area: icon;
+    width: 68px;
+    height: 68px;
+    color: var(--rust);
+    transition: width 0.45s ease, height 0.45s ease, transform 0.45s ease;
+    flex-shrink: 0;
+  }
+
+  .edu-card.is-open .edu-icon {
+    width: 56px;
+    height: 56px;
+  }
+
+  .edu-icon svg { width: 100%; height: 100%; display: block; }
+
+  .edu-title {
+    grid-area: title;
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .edu-toggle {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 2px solid var(--rust);
+    color: var(--rust);
+    display: grid;
+    place-items: center;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: var(--font-body);
+    transition: transform 0.2s ease;
+  }
+
+  .edu-card.is-open .edu-toggle { transform: rotate(45deg); }
+
+  .edu-teaser {
+    grid-area: answer;
+    margin: 0;
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    font-style: italic;
+    transition: opacity 0.2s ease;
+  }
+
+  .edu-card.is-open .edu-teaser { display: none; }
+
+  .edu-answer {
+    grid-area: answer;
+    max-width: 0;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    color: var(--ink-soft);
+    font-size: 14.5px;
+    transition: max-height 0.45s ease, opacity 0.3s ease 0.1s, max-width 0.45s ease;
+  }
+
+  .edu-answer p { margin: 0; }
+
+  .edu-card.is-open .edu-answer {
+    max-width: 640px;
+    max-height: 320px;
+    opacity: 1;
+  }
+
+  .edu-note {
+    max-width: 780px;
+    margin: 40px auto 0;
+    text-align: center;
+    padding: 24px;
+    border: 2px dashed var(--tan-border);
+    border-radius: 10px;
+  }
+
+  .edu-note p { margin: 0 0 14px; color: var(--ink-soft); }
+
+  .btn {
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 11px 20px;
+    border-radius: 6px;
+    transition: transform 0.1s ease, background 0.15s ease;
+  }
+
+  .btn-brass {
+    background: var(--rust);
+    color: var(--white);
+  }
+
+  .btn-brass:hover { background: var(--rust-light); transform: translateY(-1px); }
+
+  /* ---------- Footer ---------- */
+
+  .site-footer {
+    background: var(--ink);
+    color: rgba(251, 246, 238, 0.75);
+    padding: 36px 0 24px;
+  }
+
+  .footer-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(251,246,238,0.14);
+    margin-bottom: 16px;
+  }
+
+  .footer-brand {
+    font-family: var(--font-display);
+    color: var(--cream);
+    font-size: 20px;
+  }
+
+  .footer-links { display: flex; gap: 18px; flex-wrap: wrap; }
+
+  .footer-links a { text-decoration: none; font-size: 13.5px; color: rgba(251,246,238,0.75); }
+  .footer-links a:hover { color: var(--rust-light); }
+
+  .footer-fine { font-size: 12px; }
+
+  /* ---------- Responsive ---------- */
+
+  @media (max-width: 640px) {
+    .site-header .wrap { flex-direction: column; align-items: flex-start; }
+    .hero { padding: 44px 20px 36px; }
+    .section { padding: 40px 0; }
+    .edu-card.is-open { grid-template-columns: 56px 1fr; column-gap: 14px; }
+    .edu-card.is-open .edu-icon { width: 44px; height: 44px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .btn:hover { transform: none; }
+    .edu-card, .edu-icon, .edu-answer, .edu-toggle { transition: none; }
+  }
+
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">TC</span>
+        <span class="brand-text">Thompson Corral<small>Registered Livestock &middot; Arkansas</small></span>
+      </a>
+      <nav class="main-nav" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="cattle.html">Brown Swiss</a>
+        <a href="kunekune.html">Kune Kune</a>
+        <a href="piglets.html">Piglets For Sale</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <p class="hero-eyebrow">Knowledge Base</p>
+    <h1>KuneKune 101</h1>
+    <p>A bite-sized guide to the breed that makes Thompson Corral tick. Tap any card to learn more.</p>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Everything KuneKune</h2>
+        <p>History, temperament, looks, and a little bit of pig science.</p>
+      </div>
+
+      <div class="edu-grid" id="eduGrid">
+
+        <button type="button" class="edu-card" aria-expanded="false">
+          <span class="edu-icon" aria-hidden="true">
+            <svg viewBox="0 0 120 100"><path d="M20,70 Q15,40 45,35 Q60,20 85,28 Q105,32 108,50 Q110,65 95,72 Q80,80 55,80 Q30,80 20,70 Z" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/><path d="M80,26 Q88,14 96,24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><ellipse cx="104" cy="46" rx="10" ry="7" fill="none" stroke="currentColor" stroke-width="4"/><circle cx="100" cy="46" r="1.6" fill="currentColor"/><circle cx="107" cy="46" r="1.6" fill="currentColor"/><circle cx="88" cy="38" r="2.5" fill="currentColor"/><path d="M35,78 L33,92 M50,80 L49,93 M70,80 L71,93 M88,76 L90,90" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M20,60 Q10,55 14,48 Q18,42 24,48" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg>
+          </span>
+          <h3 class="edu-title">Where They Come From <span class="edu-toggle">+</span></h3>
+          <p class="edu-teaser">A pig with royal Ma&#333;ri roots</p>
+          <div class="edu-answer">
+            <p>KuneKunes trace back to Pacific Island pigs that reached Aotearoa New Zealand through early trade with visiting sailors, then were nurtured by M&#257;ori communities who valued them as calm, free-roaming companions rather than penned livestock. By the 1970s the breed had nearly vanished, down to a handful of animals scattered across remote corners of the North Island. Two dedicated New Zealanders spent years tracking down the last purebred survivors, and the small herd they gathered became the foundation for every KuneKune alive today &mdash; including the ones grazing right here at Thompson Corral.</p>
+          </div>
+        </button>
+
+        <button type="button" class="edu-card" aria-expanded="false">
+          <span class="edu-icon" aria-hidden="true">
+            <svg viewBox="0 0 120 100"><path d="M20,70 Q15,40 45,35 Q60,20 85,28 Q105,32 108,50 Q110,65 95,72 Q80,80 55,80 Q30,80 20,70 Z" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/><path d="M80,26 Q88,14 96,24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><ellipse cx="104" cy="46" rx="10" ry="7" fill="none" stroke="currentColor" stroke-width="4"/><circle cx="100" cy="46" r="1.6" fill="currentColor"/><circle cx="107" cy="46" r="1.6" fill="currentColor"/><circle cx="88" cy="38" r="2.5" fill="currentColor"/><path d="M35,78 L33,92 M50,80 L49,93 M70,80 L71,93 M88,76 L90,90" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M20,60 Q10,55 14,48 Q18,42 24,48" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><ellipse cx="99" cy="55" rx="2.2" ry="6" fill="none" stroke="currentColor" stroke-width="3"/><ellipse cx="105" cy="56" rx="2.2" ry="6" fill="none" stroke="currentColor" stroke-width="3"/></svg>
+          </span>
+          <h3 class="edu-title">Those Chin Tassels <span class="edu-toggle">+</span></h3>
+          <p class="edu-teaser">What are those dangly bits under their chin?</p>
+          <div class="edu-answer">
+            <p>The fleshy little tassels that dangle beneath many KuneKune chins are called piri piri, a M&#257;ori term for this quirky, one-of-a-kind trait. Not every KuneKune grows a pair &mdash; some have one, some have none &mdash; and it has no effect on health or personality either way. Breeders simply consider it a charming bonus, a bit like a fingerprint that makes each pig instantly recognizable.</p>
+          </div>
+        </button>
+
+        <button type="button" class="edu-card" aria-expanded="false">
+          <span class="edu-icon" aria-hidden="true">
+            <svg viewBox="0 0 120 100"><path d="M20,70 Q15,40 45,35 Q60,20 85,28 Q105,32 108,50 Q110,65 95,72 Q80,80 55,80 Q30,80 20,70 Z" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/><path d="M80,26 Q88,14 96,24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><ellipse cx="104" cy="46" rx="10" ry="7" fill="none" stroke="currentColor" stroke-width="4"/><circle cx="100" cy="46" r="1.6" fill="currentColor"/><circle cx="107" cy="46" r="1.6" fill="currentColor"/><path d="M84,35 Q88,32 92,35" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M35,78 L33,92 M50,80 L49,93 M70,80 L71,93 M88,76 L90,90" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M20,60 Q10,55 14,48 Q18,42 24,48" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M55,10 Q60,4 65,10 M60,8 L60,2" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+          </span>
+          <h3 class="edu-title">Their Famous Temperament <span class="edu-toggle">+</span></h3>
+          <p class="edu-teaser">Basically the golden retriever of pigs</p>
+          <div class="edu-answer">
+            <p>Ask anyone who's spent time around a KuneKune and "friendly" is usually the first word out of their mouth. The breed was shaped by generations of living alongside people rather than being fenced away from them, and that history shows: they're calm, sociable, and genuinely seem to enjoy company, whether that's a scratch behind the ears or a slow walk around the pasture. It's a big part of why they've become a favorite for families and small farms alike.</p>
+          </div>
+        </button>
+
+        <button type="button" class="edu-card" aria-expanded="false">
+          <span class="edu-icon" aria-hidden="true">
+            <svg viewBox="0 0 120 100"><path d="M20,70 Q15,40 45,35 Q60,20 85,28 Q105,32 108,50 Q110,65 95,72 Q80,80 55,80 Q30,80 20,70 Z" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/><path d="M80,26 Q88,14 96,24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><ellipse cx="104" cy="46" rx="10" ry="7" fill="none" stroke="currentColor" stroke-width="4"/><circle cx="100" cy="46" r="1.6" fill="currentColor"/><circle cx="107" cy="46" r="1.6" fill="currentColor"/><circle cx="88" cy="38" r="2.5" fill="currentColor"/><path d="M35,78 L33,92 M50,80 L49,93 M70,80 L71,93 M88,76 L90,90" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M20,60 Q10,55 14,48 Q18,42 24,48" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M30,45 L108,45" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="3 4"/></svg>
+          </span>
+          <h3 class="edu-title">Built Low, Wide, and Round <span class="edu-toggle">+</span></h3>
+          <p class="edu-teaser">Short legs, big personality</p>
+          <div class="edu-answer">
+            <p>KuneKunes have a look all their own: a short, sturdy frame set low to the ground, a rounded belly, and a broad, slightly dished face. Their snout is shorter than most pig breeds, which pairs with grazing teeth built for pulling up grass rather than digging deep. Ears can stand up or flop forward, and no two pigs seem to wear them quite the same way.</p>
+          </div>
+        </button>
+
+        <button type="button" class="edu-card" aria-expanded="false">
+          <span class="edu-icon" aria-hidden="true">
+            <svg viewBox="0 0 120 100"><path d="M20,70 Q15,40 45,35 Q60,20 85,28 Q105,32 108,50 Q110,65 95,72 Q80,80 55,80 Q30,80 20,70 Z" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/><path d="M80,26 Q88,14 96,24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><ellipse cx="104" cy="46" rx="10" ry="7" fill="none" stroke="currentColor" stroke-width="4"/><circle cx="100" cy="46" r="1.6" fill="currentColor"/><circle cx="107" cy="46" r="1.6" fill="currentColor"/><circle cx="88" cy="38" r="2.5" fill="currentColor"/><path d="M35,78 L33,92 M50,80 L49,93 M70,80 L71,93 M88,76 L90,90" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M20,60 Q10,55 14,48 Q18,42 24,48" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><ellipse cx="44" cy="54" rx="7" ry="5" fill="currentColor" opacity="0.3"/><ellipse cx="65" cy="68" rx="9" ry="6" fill="currentColor" opacity="0.3"/><ellipse cx="30" cy="66" rx="5" ry="4" fill="currentColor" opacity="0.3"/></svg>
+          </span>
+          <h3 class="edu-title">A Whole Rainbow of Coats <span class="edu-toggle">+</span></h3>
+          <p class="edu-teaser">No two look exactly alike</p>
+          <div class="edu-answer">
+            <p>Coat colors across the breed run from deep black to cream white, with ginger, gold, brown, and speckled combinations showing up along the way. Registries keep an official color chart just to keep track of it all, since new pairings can turn up patterns breeders haven't quite seen before. It's one of the small joys of raising them &mdash; every litter is a bit of a surprise.</p>
+          </div>
+        </button>
+
+        <button type="button" class="edu-card" aria-expanded="false">
+          <span class="edu-icon" aria-hidden="true">
+            <svg viewBox="0 0 120 100"><path d="M20,70 Q15,40 45,35 Q60,20 85,28 Q105,32 108,50 Q110,65 95,72 Q80,80 55,80 Q30,80 20,70 Z" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/><path d="M80,26 Q88,14 96,24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><ellipse cx="104" cy="46" rx="10" ry="7" fill="none" stroke="currentColor" stroke-width="4"/><circle cx="88" cy="38" r="2.5" fill="currentColor"/><path d="M35,78 L33,92 M50,80 L49,93 M70,80 L71,93 M88,76 L90,90" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M20,60 Q10,55 14,48 Q18,42 24,48" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M113,42 L121,36 M114,46 L122,44 M113,50 L120,53" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+          </span>
+          <h3 class="edu-title">Lawnmowers, Not Landscapers <span class="edu-toggle">+</span></h3>
+          <p class="edu-teaser">Why they don't tear up the yard</p>
+          <div class="edu-answer">
+            <p>Unlike many pig breeds, KuneKunes are grazers first and diggers a distant second. They'll happily mow down a pasture the way a herd of little lawnmowers would, without leaving the churned-up craters other breeds are known for. That single trait is a big reason they've become a favorite for orchards, small acreages, and anyone who wants pigs without saying goodbye to their lawn.</p>
+          </div>
+        </button>
+
+        <button type="button" class="edu-card" aria-expanded="false">
+          <span class="edu-icon" aria-hidden="true">
+            <svg viewBox="0 0 120 100"><path d="M20,70 Q15,40 45,35 Q60,20 85,28 Q105,32 108,50 Q110,65 95,72 Q80,80 55,80 Q30,80 20,70 Z" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/><path d="M80,26 Q88,14 96,24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><ellipse cx="104" cy="46" rx="10" ry="7" fill="none" stroke="currentColor" stroke-width="4"/><circle cx="100" cy="46" r="1.6" fill="currentColor"/><circle cx="107" cy="46" r="1.6" fill="currentColor"/><circle cx="88" cy="38" r="2.5" fill="currentColor"/><path d="M35,78 L33,92 M50,80 L49,93 M70,80 L71,93 M88,76 L90,90" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M20,60 Q10,55 14,48 Q18,42 24,48" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M8,88 L118,88 M8,88 L8,82 M63,88 L63,84 M118,88 L118,82" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+          </span>
+          <h3 class="edu-title">How Big Do They Get? <span class="edu-toggle">+</span></h3>
+          <p class="edu-teaser">Small for a pig, big for a lap dog</p>
+          <div class="edu-answer">
+            <p>Fully grown KuneKunes typically stand around two feet tall at the shoulder and settle somewhere between 100 and 250 pounds, though exact size depends a lot on bloodline and diet. They're also slow to mature, often taking a couple of years to reach full adult size rather than bulking up quickly the way commercial breeds do. That leisurely growth is part of what keeps them so easygoing.</p>
+          </div>
+        </button>
+
+        <button type="button" class="edu-card" aria-expanded="false">
+          <span class="edu-icon" aria-hidden="true">
+            <svg viewBox="0 0 120 100"><path d="M14,74 Q10,50 32,46 Q42,34 60,40 Q74,43 76,56 Q78,67 66,72 Q54,78 34,78 Q18,78 14,74 Z" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/><ellipse cx="72" cy="55" rx="7" ry="5" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="62" cy="48" r="2" fill="currentColor"/><path d="M26,78 L25,88 M42,79 L41,89 M55,79 L56,89" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><circle cx="94" cy="70" r="13" fill="none" stroke="currentColor" stroke-width="3.5"/><ellipse cx="103" cy="65" rx="3.5" ry="2.5" fill="none" stroke="currentColor" stroke-width="2.5"/><circle cx="101" cy="65" r="0.9" fill="currentColor"/><path d="M89,78 L88,84 M99,78 L99,84" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+          </span>
+          <h3 class="edu-title">Family Life &amp; Litters <span class="edu-toggle">+</span></h3>
+          <p class="edu-teaser">Meet the next generation</p>
+          <div class="edu-answer">
+            <p>Sows are typically given a year or so to mature before their first litter, even though they're biologically capable earlier, and pregnancies last right around 116 days. Litters can vary quite a bit in size, and piglets are usually ready to wean by six to eight weeks old. From there, it's a slow, steady runway to adulthood &mdash; very on-brand for this unhurried breed.</p>
+          </div>
+        </button>
+
+        <button type="button" class="edu-card" aria-expanded="false">
+          <span class="edu-icon" aria-hidden="true">
+            <svg viewBox="0 0 120 100"><path d="M20,70 Q15,40 45,35 Q60,20 85,28 Q105,32 108,50 Q110,65 95,72 Q80,80 55,80 Q30,80 20,70 Z" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/><path d="M80,26 Q88,14 96,24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><ellipse cx="104" cy="46" rx="10" ry="7" fill="none" stroke="currentColor" stroke-width="4"/><circle cx="100" cy="46" r="1.6" fill="currentColor"/><circle cx="107" cy="46" r="1.6" fill="currentColor"/><circle cx="88" cy="38" r="2.5" fill="currentColor"/><path d="M35,78 L33,92 M50,80 L49,93 M70,80 L71,93 M88,76 L90,90" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><circle cx="18" cy="55" r="8" fill="none" stroke="currentColor" stroke-width="3"/><path d="M12,62 L8,74 L18,68 L28,74 L24,62" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/></svg>
+          </span>
+          <h3 class="edu-title">Why We Track Bloodlines <span class="edu-toggle">+</span></h3>
+          <p class="edu-teaser">The paperwork behind every piglet</p>
+          <div class="edu-answer">
+            <p>Every registered KuneKune traces back to a documented family tree, and responsible breeders lean on that history to avoid pairing pigs too closely related to one another. We use the same approach here at Thompson Corral &mdash; checking inbreeding coefficients before every pairing &mdash; because it keeps litters healthy and keeps the breed's gene pool strong for generations of KuneKunes still to come.</p>
+          </div>
+        </button>
+
+        <button type="button" class="edu-card" aria-expanded="false">
+          <span class="edu-icon" aria-hidden="true">
+            <svg viewBox="0 0 120 100"><path d="M20,70 Q15,40 45,35 Q60,20 85,28 Q105,32 108,50 Q110,65 95,72 Q80,80 55,80 Q30,80 20,70 Z" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/><path d="M80,26 Q88,14 96,24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><ellipse cx="104" cy="46" rx="10" ry="7" fill="none" stroke="currentColor" stroke-width="4"/><circle cx="100" cy="46" r="1.6" fill="currentColor"/><circle cx="107" cy="46" r="1.6" fill="currentColor"/><circle cx="88" cy="38" r="2.5" fill="currentColor"/><path d="M35,78 L33,92 M50,80 L49,93 M70,80 L71,93 M88,76 L90,90" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M20,60 Q10,55 14,48 Q18,42 24,48" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M14,20 L20,28 M8,16 L18,18 M14,10 L16,20" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+          </span>
+          <h3 class="edu-title">Homestead-Ready by Design <span class="edu-toggle">+</span></h3>
+          <p class="edu-teaser">Why they're a favorite starter pig</p>
+          <div class="edu-answer">
+            <p>Between their manageable size, easygoing nature, and light footprint on pasture, KuneKunes have become a go-to choice for first-time pig owners and small family farms. A simple three-sided shelter with dry bedding and a secure fence line is usually all they need to thrive, which makes them a realistic option for homesteads that couldn't manage a larger, more destructive breed.</p>
+          </div>
+        </button>
+
+        <button type="button" class="edu-card" aria-expanded="false">
+          <span class="edu-icon" aria-hidden="true">
+            <svg viewBox="0 0 120 100"><path d="M20,70 Q15,40 45,35 Q60,20 85,28 Q105,32 108,50 Q110,65 95,72 Q80,80 55,80 Q30,80 20,70 Z" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/><path d="M80,26 Q88,14 96,24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><ellipse cx="104" cy="46" rx="10" ry="7" fill="none" stroke="currentColor" stroke-width="4"/><circle cx="100" cy="46" r="1.6" fill="currentColor"/><circle cx="107" cy="46" r="1.6" fill="currentColor"/><circle cx="88" cy="38" r="2.5" fill="currentColor"/><path d="M35,78 L33,92 M50,80 L49,93 M70,80 L71,93 M88,76 L90,90" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M20,60 Q10,55 14,48 Q18,42 24,48" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M60,8 L62,14 L68,14 L63,18 L65,24 L60,20 L55,24 L57,18 L52,14 L58,14 Z" fill="currentColor" opacity="0.35"/></svg>
+          </span>
+          <h3 class="edu-title">How Long Do They Live? <span class="edu-toggle">+</span></h3>
+          <p class="edu-teaser">A pig that sticks around</p>
+          <div class="edu-answer">
+            <p>With good nutrition and routine care, KuneKunes commonly live into their teens, and well-kept pigs have been known to reach eighteen to twenty years old. Genetics, diet, and living conditions all play a role, but compared to many farm animals, a KuneKune is a long-term companion &mdash; closer to a family pet's lifespan than a typical livestock timeline.</p>
+          </div>
+        </button>
+
+      </div>
+
+      <div class="edu-note">
+        <p>Curious about a specific piglet's bloodline or looking to bring one home?</p>
+        <a class="btn btn-brass" href="piglets.html">See Piglets For Sale</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">Thompson Corral</div>
+        <nav class="footer-links" aria-label="Footer">
+          <a href="index.html">Home</a>
+          <a href="cattle.html">Brown Swiss</a>
+          <a href="kunekune.html">Kune Kune</a>
+          <a href="piglets.html">Piglets For Sale</a>
+          <a href="faq.html">FAQ</a>
+          <a href="kunekune-101.html">KuneKune 101</a>
+          <a href="mailto:info@thompsoncorral.com">Contact</a>
+        </nav>
+      </div>
+      <p class="footer-fine">&copy; <span id="year"></span> Thompson Corral. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    document.querySelectorAll('.edu-card').forEach(function (card) {
+      card.addEventListener('click', function () {
+        var isOpen = card.classList.contains('is-open');
+        card.classList.toggle('is-open', !isOpen);
+        card.setAttribute('aria-expanded', String(!isOpen));
+      });
+    });
+  </script>
+</body>
+</html>
