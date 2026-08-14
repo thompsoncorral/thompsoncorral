@@ -190,14 +190,7 @@
 
   /* ---------- Educational cards ---------- */
 
-  .edu-grid {
-    max-width: 980px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 16px;
-    align-items: start;
-  }
+  .edu-grid { max-width: 980px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; align-items: start; transition: grid-template-columns 0.3s ease; } .edu-grid.has-open { grid-template-columns: 1fr; }
 
   .edu-card {
     background: var(--white);
@@ -211,7 +204,7 @@
     justify-items: center;
     text-align: center;
     row-gap: 10px;
-    transition: grid-template-columns 0.45s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    transition: grid-template-columns 0.45s ease, box-shadow 0.2s ease, border-color 0.2s ease, opacity 0.3s ease;
   }
 
   .edu-card:hover {
@@ -219,14 +212,7 @@
     box-shadow: 0 4px 14px rgba(59, 46, 34, 0.08);
   }
 
-  .edu-card.is-open {
-    grid-template-columns: 76px 1fr;
-    grid-template-areas: "icon title" "icon answer";
-    justify-items: start;
-    text-align: left;
-    column-gap: 18px;
-    row-gap: 6px;
-  }
+  .edu-card.is-open { grid-column: 1 / -1; grid-template-columns: 76px 210px 1fr; grid-template-areas: "icon title answer"; justify-items: start; align-items: start; text-align: left; column-gap: 24px; row-gap: 0; }
 
   .edu-icon {
     grid-area: icon;
@@ -248,7 +234,7 @@
     grid-area: title;
     margin: 0;
     font-family: var(--font-display);
-    font-size: 17px;
+    font-size: 19px;
     font-weight: 700;
     color: var(--ink);
     display: flex;
@@ -256,31 +242,11 @@
     gap: 10px;
   }
 
-  .edu-toggle {
-    flex-shrink: 0;
-    width: 22px;
-    height: 22px;
-    border-radius: 50%;
-    border: 2px solid var(--rust);
-    color: var(--rust);
-    display: grid;
-    place-items: center;
-    font-size: 14px;
-    font-weight: 700;
-    font-family: var(--font-body);
-    transition: transform 0.2s ease;
-  }
+  .edu-toggle { flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; border: 2px solid var(--rust); color: var(--rust); display: grid; place-items: center; font-size: 15px; font-weight: 700; font-family: var(--font-body); transition: transform 0.2s ease; }
 
   .edu-card.is-open .edu-toggle { transform: rotate(45deg); }
 
-  .edu-teaser {
-    grid-area: answer;
-    margin: 0;
-    font-size: 13.5px;
-    color: var(--ink-soft);
-    font-style: italic;
-    transition: opacity 0.2s ease;
-  }
+  .edu-teaser { grid-area: answer; margin: 0; font-size: 15px; color: var(--ink-soft); font-style: italic; transition: opacity 0.2s ease; }
 
   .edu-card.is-open .edu-teaser { display: none; }
 
@@ -291,17 +257,13 @@
     opacity: 0;
     overflow: hidden;
     color: var(--ink-soft);
-    font-size: 14.5px;
+    font-size: 16.5px;
     transition: max-height 0.45s ease, opacity 0.3s ease 0.1s, max-width 0.45s ease;
   }
 
   .edu-answer p { margin: 0; }
 
-  .edu-card.is-open .edu-answer {
-    max-width: 640px;
-    max-height: 320px;
-    opacity: 1;
-  }
+  .edu-card.is-open .edu-answer { max-width: 100%; max-height: 600px; opacity: 1; }
 
   .edu-note {
     max-width: 780px;
@@ -368,7 +330,7 @@
     .site-header .wrap { flex-direction: column; align-items: flex-start; }
     .hero { padding: 44px 20px 36px; }
     .section { padding: 40px 0; }
-    .edu-card.is-open { grid-template-columns: 56px 1fr; column-gap: 14px; }
+    .edu-card.is-open { grid-template-columns: 56px 1fr; grid-template-areas: "icon title" "icon answer"; column-gap: 14px; row-gap: 6px; }
     .edu-card.is-open .edu-icon { width: 44px; height: 44px; }
   }
 
@@ -563,13 +525,7 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    document.querySelectorAll('.edu-card').forEach(function (card) {
-      card.addEventListener('click', function () {
-        var isOpen = card.classList.contains('is-open');
-        card.classList.toggle('is-open', !isOpen);
-        card.setAttribute('aria-expanded', String(!isOpen));
-      });
-    });
+    var eduGrid = document.getElementById('eduGrid'); var eduCards = Array.prototype.slice.call(document.querySelectorAll('.edu-card')); eduCards.forEach(function (card) { card.addEventListener('click', function () { var isOpen = card.classList.contains('is-open'); card.classList.toggle('is-open', !isOpen); card.setAttribute('aria-expanded', String(!isOpen)); var anyOpen = eduCards.some(function (c) { return c.classList.contains('is-open'); }); eduGrid.classList.toggle('has-open', anyOpen); }); });
   </script>
 </body>
 </html>
