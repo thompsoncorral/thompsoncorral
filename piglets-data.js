@@ -94,6 +94,16 @@ const UNREGISTERED_PIGLETS = [
 
 const RESERVE_EMAIL = "kunekune@thompsoncorral.com";
 
+/* Piglet Reservation Google Form -- one form handles every piglet.
+Each "Reserve" button links to this same form with the piglet's name
+pre-filled into the hidden "Piglet" field via a URL parameter, so you
+always know which piglet a reservation request is for without any
+extra setup per piglet. If you ever need to rebuild the form, update
+these two values (new form URL + new entry ID for the "Piglet"
+question, found via the form's "Get pre-filled link" option). */
+const RESERVATION_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdldYpYk5pXmUCfmtDb2WeQ7DCKWKXOIbkle_ym_Ev3LHxRzQ/viewform";
+const RESERVATION_FORM_PIGLET_ENTRY_ID = "2037063654";
+
 /* Photos of the farm's boar/sows, used on each piglet's "More Info" page
    under Parentage. Add a name here (matching the "sire"/"dam" fields above
    exactly) to show that parent's photo; unmatched names just show as text. */
@@ -176,9 +186,10 @@ function buyActionsHtml(pig) {
   }
 
   if (!pig.stripeLink && !pig.paypalButtonId) {
-    const subject = pig.regNumber ? `Reserving ${pig.name} (${pig.regNumber})` : `Reserving ${pig.name}`;
+    const pigletLabel = pig.regNumber ? `${pig.name} (${pig.regNumber})` : `${pig.name} (${pig.id})`;
+    const reserveLink = `${RESERVATION_FORM_URL}?usp=pp_url&entry.${RESERVATION_FORM_PIGLET_ENTRY_ID}=${encodeURIComponent(pigletLabel)}`;
     actions.push(
-      `<a class="btn btn-barn btn-block" href="mailto:${RESERVE_EMAIL}?subject=${encodeURIComponent(subject)}">Email to Reserve</a>`
+      `<a class="btn btn-barn btn-block" href="${reserveLink}" target="_blank" rel="noopener">Reserve This Piglet</a>`
     );
   }
 
