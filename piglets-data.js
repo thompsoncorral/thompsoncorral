@@ -84,12 +84,12 @@ const UNREGISTERED_PIGLETS = [
   { id: "unreg-10", name: "Piglet #10", sex: "Male", fixedStatus: "Castrated",   wattles: "Double Wattled", dam: "Mia",   sire: "Coconut", dob: "", price: 450, status: "available", images: [], bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
   { id: "unreg-11", name: "Piglet #11", sex: "Female", fixedStatus: "Intact", wattles: "Double Wattled", dam: "Mia",   sire: "Coconut", dob: "", price: 450, status: "available", images: [], bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
   { id: "unreg-12", name: "Piglet #12", sex: "Male", fixedStatus: "Castrated",   wattles: "Double Wattled", dam: "Mia",   sire: "Coconut", dob: "", price: 450, status: "available", images: [], bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
-  { id: "unreg-13", name: "Piglet #13", sex: "Female", fixedStatus: "Intact", wattles: "Double Wattled", dam: "Indy",  sire: "Coconut", dob: "", price: 450, status: "available", images: [], bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
-  { id: "unreg-14", name: "Piglet #14", sex: "Male", fixedStatus: "Castrated",   wattles: "Double Wattled", dam: "Indy",  sire: "Coconut", dob: "", price: 450, status: "available", images: [], bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
-  { id: "unreg-15", name: "Piglet #15", sex: "Female", fixedStatus: "Intact", wattles: "Double Wattled", dam: "Indy",  sire: "Coconut", dob: "", price: 450, status: "available", images: [], bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
-  { id: "unreg-16", name: "Piglet #16", sex: "Male", fixedStatus: "Castrated",   wattles: "Double Wattled", dam: "Indy",  sire: "Coconut", dob: "", price: 450, status: "available", images: [], bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
-  { id: "unreg-17", name: "Piglet #17", sex: "Female", fixedStatus: "Intact", wattles: "Double Wattled", dam: "Indy",  sire: "Coconut", dob: "", price: 450, status: "available", images: [], bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
-  { id: "unreg-18", name: "Piglet #18", sex: "Male", fixedStatus: "Castrated",   wattles: "Double Wattled", dam: "Indy",  sire: "Coconut", dob: "", price: 450, status: "available", images: [], bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" }
+  { id: "unreg-13", name: "Piglet #13", sex: "Female", fixedStatus: "Intact", wattles: "Double Wattled", dam: "Bingo",  sire: "Coconut", dob: "", price: 450, status: "available", images: [], bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
+  { id: "unreg-14", name: "Piglet #14", sex: "Male", fixedStatus: "Castrated",   wattles: "Double Wattled", dam: "Bingo",  sire: "Coconut", dob: "", price: 450, status: "available", images: [], bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
+  { id: "unreg-15", name: "Piglet #15", sex: "Female", fixedStatus: "Intact", wattles: "Double Wattled", dam: "Bingo",  sire: "Coconut", dob: "", price: 450, status: "available", images: [], bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
+  { id: "unreg-16", name: "Piglet #16", sex: "Male", fixedStatus: "Castrated",   wattles: "Double Wattled", dam: "Bingo",  sire: "Coconut", dob: "", price: 450, status: "available", images: [], bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
+  { id: "unreg-17", name: "Piglet #17", sex: "Female", fixedStatus: "Intact", wattles: "Double Wattled", dam: "Bingo",  sire: "Coconut", dob: "", price: 450, status: "available", images: [], bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" },
+  { id: "unreg-18", name: "Piglet #18", sex: "Male", fixedStatus: "Castrated",   wattles: "Double Wattled", dam: "Bingo",  sire: "Coconut", dob: "", price: 450, status: "available", images: [], bio: "Unregistered KuneKune piglet — replace with real description.", stripeLink: "", paypalButtonId: "" }
 ];
 
 const RESERVE_EMAIL = "kunekune@thompsoncorral.com";
@@ -110,15 +110,14 @@ const RESERVATION_FORM_PIGLET_ENTRY_ID = "2037063654";
 const PARENT_PHOTOS = {
   "Coconut": "https://static.wixstatic.com/media/d72fc0_d86e2d82713d4c0a8899aaf82e4b84fc~mv2.jpg/v1/fill/w_443,h_431,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/DSC_6263.jpg",
   "Bluey": "https://static.wixstatic.com/media/d72fc0_fe4748d8e24a4bafa123f573460a12aa~mv2.jpg/v1/fill/w_368,h_515,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/d72fc0_fe4748d8e24a4bafa123f573460a12aa~mv2.jpg",
-  "Mia": "https://static.wixstatic.com/media/d72fc0_51126eca4ed947a39bf5f4e9550bff9d~mv2.jpg/v1/fill/w_368,h_436,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/d72fc0_51126eca4ed947a39bf5f4e9550bff9d~mv2.jpg"
-  /* "Indy" intentionally omitted — no confirmed photo yet, so her parent
-     card and kunekune.html card both show a "Photo Coming Soon" placeholder. */
+  "Mia": "images/kunekune/mia.jpg",
+  "Bingo": "images/kunekune/Bingo.jpg"
 };
 
 /* Registry details for parents that have a full AKKPS record on file.
    Shown on each piglet's "More Info" page under Parentage, for whichever
    parent (sire and/or dam) has an entry here — parents without an entry
-   (e.g. unregistered dams like Bluey/Mia/Indy) just show name + photo. */
+   (e.g. unregistered dams like Bluey/Mia/Bingo) just show name + photo. */
 const PARENT_DETAILS = {
   "Coconut": {
     regName: "Broken H Farm Whakanui 1",
