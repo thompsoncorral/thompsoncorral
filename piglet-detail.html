@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Piglet Details | Thompson Corral</title>
+  <title>KuneKune Piglet Details | Thompson Corral</title>
   <meta name="description" content="Full details, photos, and pedigree for KuneKune piglets available at Thompson Corral." />
   <style>
 /* ============================================================
@@ -1025,6 +1025,26 @@ function renderNotFound() {
   `;
 }
 
+function regStatusLabel(regNumber) {
+  if (!regNumber) return "Unregistered";
+  const m = String(regNumber).trim().match(/([A-Za-z+]+)\s*$/);
+  const suffix = m ? m[1].toUpperCase() : "";
+  if (suffix === "P") return "AKKPS Litter Notified";
+  if (suffix === "A") return "AKKPS Companion Animal";
+  if (suffix === "MP") return "AKKPS Harvest Animal";
+  if (suffix === "OB") return "AKKPS Under Observation";
+  return "AKKPS Registered";
+}
+function isFullyRegistered(regNumber) {
+  return !!regNumber && regStatusLabel(regNumber) === "AKKPS Registered";
+}
+function regTagline(regNumber) {
+  if (!regNumber) return "Unregistered KuneKune piglet";
+  return isFullyRegistered(regNumber)
+    ? "AKKPS-registered KuneKune piglet"
+    : "AKKPS litter-notified KuneKune piglet";
+}
+
 function renderPigletDetail() {
   const id = getQueryParam("id");
   const pig = findPiglet(id);
@@ -1037,7 +1057,7 @@ function renderPigletDetail() {
 
   const images = pig.images || [];
   const photoHtml = images.length
-    ? `<img src="${images[0]}" alt="${pig.name}, ${pig.sex.toLowerCase()} KuneKune piglet" class="registry-main-photo" />`
+    ? `<img src="${images[0]}" alt="${pig.name}, ${regTagline(pig.regNumber)} at Thompson Corral" class="registry-main-photo" />`
     : `<div class="registry-photo-placeholder">Photo Coming Soon</div>`;
 
   const thumbsHtml = images.length > 1
@@ -1047,12 +1067,10 @@ function renderPigletDetail() {
         </button>`).join("")}</div>`
     : "";
 
-  const sealHtml = pig.regNumber
-    ? `<span class="registry-seal">AKKPS Registered</span>`
-    : `<span class="registry-seal">Unregistered</span>`;
+  const sealHtml = `<span class="registry-seal">${regStatusLabel(pig.regNumber)}</span>`;
 
   const badges = [];
-  badges.push(pig.regNumber ? `<span class="detail-badge">&#10003; AKKPS Registered</span>` : `<span class="detail-badge">Unregistered</span>`);
+  badges.push(`<span class="detail-badge">${isFullyRegistered(pig.regNumber) ? "&#10003; " : ""}${regStatusLabel(pig.regNumber)}</span>`);
   badges.push(`<span class="detail-badge">${pig.sex}</span>`);
 
   const regRow = pig.regNumber ? `<div><span class="k">Reg #</span><span class="v">${pig.regNumber}</span></div>` : "";
@@ -1093,7 +1111,7 @@ function renderPigletDetail() {
       </div>
       <aside class="detail-sidebar">
         <h1 class="detail-title">${pig.name}</h1>
-        <p class="detail-tagline">${pig.regNumber ? "AKKPS-registered KuneKune piglet" : "Unregistered KuneKune piglet"} at Thompson Corral</p>
+        <p class="detail-tagline">${regTagline(pig.regNumber)} at Thompson Corral</p>
         <div class="detail-badges">${badges.join("")}</div>
         <div class="detail-facts">
           ${regRow}
@@ -1106,7 +1124,7 @@ function renderPigletDetail() {
           ${dobRow}
         </div>
         <div class="detail-price-row">
-          <span class="amount">$${pig.price.toLocaleString()}</span>
+          <span class="amount">${(Number(pig.price) > 0) ? "$" + Number(pig.price).toLocaleString() : "Price on request"}</span>
           ${statusTagHtml(pig)}
         </div>
         ${buyActionsHtml(pig)}

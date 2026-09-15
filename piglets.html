@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Piglets For Sale | Thompson Corral</title>
-  <meta name="description" content="AKKPS-registered KuneKune piglets currently available at Thompson Corral. Reserve or buy online." />
+  <meta name="description" content="AKKPS KuneKune piglets for sale in Arkansas — registered bloodlines, litter notified with AKKPS, plus unregistered piglets from Thompson Corral." />
   <style>
 /* ============================================================
    Thompson Corral — Option B: Warm Farmhouse
@@ -700,7 +700,7 @@ a { color: inherit; }
   <meta property="og:locale" content="en_US" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Piglets For Sale | Thompson Corral" />
-  <meta property="og:description" content="AKKPS-registered KuneKune piglets currently available at Thompson Corral. Reserve or buy online." />
+  <meta property="og:description" content="AKKPS KuneKune piglets for sale in Arkansas — registered bloodlines, litter notified with AKKPS, plus unregistered piglets from Thompson Corral." />
   <meta property="og:url" content="https://thompsoncorral.com/piglets.html" />
   <meta property="og:image" content="https://thompsoncorral.com/images/og/og-piglets.jpg" />
   <meta property="og:image:secure_url" content="https://thompsoncorral.com/images/og/og-piglets.jpg" />
@@ -710,7 +710,7 @@ a { color: inherit; }
   <meta property="og:image:alt" content="KuneKune piglets for sale at Thompson Corral" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Piglets For Sale | Thompson Corral" />
-  <meta name="twitter:description" content="AKKPS-registered KuneKune piglets currently available at Thompson Corral. Reserve or buy online." />
+  <meta name="twitter:description" content="AKKPS KuneKune piglets for sale in Arkansas — registered bloodlines, litter notified with AKKPS, plus unregistered piglets from Thompson Corral." />
   <meta name="twitter:image" content="https://thompsoncorral.com/images/og/og-piglets.jpg" />
   <meta name="twitter:image:alt" content="KuneKune piglets for sale at Thompson Corral" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -727,7 +727,7 @@ a { color: inherit; }
       "@id": "https://thompsoncorral.com/piglets.html#webpage",
       "url": "https://thompsoncorral.com/piglets.html",
       "name": "Piglets For Sale | Thompson Corral",
-      "description": "AKKPS-registered KuneKune piglets currently available at Thompson Corral. Reserve or buy online.",
+      "description": "AKKPS KuneKune piglets for sale in Arkansas — registered bloodlines, litter notified with AKKPS, plus unregistered piglets from Thompson Corral.",
       "inLanguage": "en-US",
       "isPartOf": {
         "@id": "https://thompsoncorral.com/#website"
@@ -766,7 +766,7 @@ a { color: inherit; }
       "@id": "https://thompsoncorral.com/piglets.html#collection",
       "url": "https://thompsoncorral.com/piglets.html",
       "name": "Piglets For Sale | Thompson Corral",
-      "description": "AKKPS-registered KuneKune piglets currently available at Thompson Corral. Reserve or buy online.",
+      "description": "AKKPS KuneKune piglets for sale in Arkansas — registered bloodlines, litter notified with AKKPS, plus unregistered piglets from Thompson Corral.",
       "about": {
         "@id": "https://thompsoncorral.com/#organization"
       },
@@ -798,7 +798,7 @@ a { color: inherit; }
   <section class="hero">
     <p class="hero-eyebrow">Available Now</p>
     <h1>KuneKune Piglets For Sale in Arkansas</h1>
-    <p>AKKPS-registered and unregistered KuneKune piglets raised on our North Central Arkansas farm. Reserve online, or email us to be added to the waitlist for the next litter.</p>
+    <p>KuneKune piglets from AKKPS-registered stock and unregistered litters, raised on our North Central Arkansas farm. Reserve online, or email us to be added to the waitlist for the next litter.</p>
   </section>
 
   <section class="section" style="padding-top:56px;">
@@ -807,8 +807,8 @@ a { color: inherit; }
 
       <div id="registered-section-content">
         <div class="section-head">
-          <p class="section-eyebrow" id="registered-eyebrow">Currently Available</p>
-          <h2 id="registered-heading">AKKPS Registered Piglets</h2>
+          <p class="section-eyebrow" id="registered-eyebrow">AKKPS Litter Notified &middot; Registration In Progress</p>
+          <h2 id="registered-heading">AKKPS KuneKune Piglets</h2>
         </div>
 
         <div id="piglet-grid" class="registry-grid" aria-live="polite">
@@ -870,6 +870,33 @@ function getQueryParam(name) {
   return new URLSearchParams(window.location.search).get(name);
 }
 
+/* AKKPS registration-number suffixes mean different things, so a piglet must
+   never be labelled "Registered" just because it has a number:
+     no suffix = fully registered, breeding rights
+     P         = litter notified, NOT yet registered
+     A         = companion animal, no breeding rights
+     MP        = animal for harvest, no breeding rights
+     OB        = under observation, no breeding rights               */
+function regStatusLabel(regNumber) {
+  if (!regNumber) return "Unregistered";
+  const m = String(regNumber).trim().match(/([A-Za-z+]+)\s*$/);
+  const suffix = m ? m[1].toUpperCase() : "";
+  if (suffix === "P") return "AKKPS Litter Notified";
+  if (suffix === "A") return "AKKPS Companion Animal";
+  if (suffix === "MP") return "AKKPS Harvest Animal";
+  if (suffix === "OB") return "AKKPS Under Observation";
+  return "AKKPS Registered";
+}
+function isFullyRegistered(regNumber) {
+  return !!regNumber && regStatusLabel(regNumber) === "AKKPS Registered";
+}
+function regTagline(regNumber) {
+  if (!regNumber) return "Unregistered KuneKune piglet";
+  return isFullyRegistered(regNumber)
+    ? "AKKPS-registered KuneKune piglet"
+    : "AKKPS litter-notified KuneKune piglet";
+}
+
 function pigletCardHtml(pig) {
   const images = pig.images || [];
   const photoHtml = images.length
@@ -883,9 +910,7 @@ function pigletCardHtml(pig) {
         </button>`).join("")}</div>`
     : "";
 
-  const sealHtml = pig.regNumber
-    ? `<span class="registry-seal">AKKPS Registered</span>`
-    : `<span class="registry-seal">Unregistered</span>`;
+  const sealHtml = `<span class="registry-seal">${regStatusLabel(pig.regNumber)}</span>`;
 
   const regRow = pig.regNumber ? `<div><span class="k">Reg #</span><span class="v">${pig.regNumber}</span></div>` : "";
   const sexRow = pig.sex ? `<div><span class="k">Sex</span><span class="v">${pig.sex}</span></div>` : "";
@@ -921,7 +946,7 @@ function pigletCardHtml(pig) {
           ${dobRow}
         </div>
         <div class="registry-price">
-          <span class="amount">$${pig.price.toLocaleString()}</span>
+          <span class="amount">${(Number(pig.price) > 0) ? "$" + Number(pig.price).toLocaleString() : "Price on request"}</span>
           ${statusTagHtml(pig)}
         </div>
         <div class="buy-actions more-info-row">
@@ -956,21 +981,21 @@ function renderPiglets() {
 
   let piglets = PIGLETS.filter(hasPhotos);
   let unregistered = UNREGISTERED_PIGLETS.filter(hasPhotos);
-  let regEyebrow = "Currently Available";
-  let regHeading = "AKKPS Registered Piglets";
+  let regEyebrow = "AKKPS Litter Notified \u00b7 Registration In Progress";
+  let regHeading = "AKKPS KuneKune Piglets";
   let unregEyebrow = "Also Currently Available";
   let unregHeading = "Unregistered Piglets";
-  let regEmpty = `Our new AKKPS litter arrived <strong>September 11, 2026</strong> — seven tri-color KuneKune piglets, five boars and two gilts, out of our registered sow Peaches (AKKPS 57956) and our registered boar Coconut (AKKPS 57040). All seven are double wattled and are recorded with AKKPS as litter notified (AKKPS 67077P–67083P), pending individual registration. Photos, pricing, and pickup dates will be posted here as they wean and are ready to go home — email ${RESERVE_EMAIL} to be told first.`;
+  let regEmpty = `Our new AKKPS litter arrived <strong>September 11, 2026</strong> — seven tri-color KuneKune piglets, five boars and two gilts, out of our registered sow Peaches (AKKPS 57956) and our registered boar Coconut (AKKPS 57040). All seven are double wattled and are recorded with AKKPS as litter notified (AKKPS 67077P–67083P), pending individual registration. The gilts are <strong>Maid Marianne</strong> and <strong>Lady Cluck</strong>; the boars are <strong>Robin Hood</strong>, <strong>Little John</strong>, <strong>Prince John</strong>, <strong>Sheriff of Nottingham</strong>, and <strong>Friar Tuck</strong>. Photos, pricing, and pickup dates will be posted here as they wean and are ready to go home — email ${RESERVE_EMAIL} to be told first.`;
   let unregEmpty = `No unregistered piglets currently listed — check back soon, or email ${RESERVE_EMAIL} to join the waitlist.`;
 
   if (damFilter) {
     piglets = piglets.filter((p) => p.dam && p.dam.toLowerCase() === damFilter.toLowerCase());
     unregistered = unregistered.filter((p) => p.dam && p.dam.toLowerCase() === damFilter.toLowerCase());
     regEyebrow = "Showing Only";
-    regHeading = `${damFilter}'s Registered Piglets`;
+    regHeading = `${damFilter}'s AKKPS Piglets`;
     unregEyebrow = "Showing Only";
     unregHeading = `${damFilter}'s Unregistered Piglets`;
-    regEmpty = `${damFilter} has no AKKPS-registered piglets currently listed. <a href="piglets.html">View All Piglets</a>.`;
+    regEmpty = `${damFilter} has no AKKPS piglets currently listed. <a href="piglets.html">View All Piglets</a>.`;
     unregEmpty = `${damFilter} has no unregistered piglets currently listed. <a href="piglets.html">View All Piglets</a>.`;
     if (banner) {
       banner.innerHTML = `<p style="margin:0;">Showing only <strong>${damFilter}'s</strong> piglets. <a href="piglets.html">View All Piglets</a></p>`;
