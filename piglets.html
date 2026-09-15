@@ -921,6 +921,7 @@ function pigletCardHtml(pig) {
   const coi = getCoi(pig);
   const coiRow = coi ? `<div><span class="k">COI</span><span class="v">${coi}%</span></div>` : "";
   const dobRow = pig.dob ? `<div><span class="k">DOB</span><span class="v">${formatDob(pig.dob)}</span></div>` : "";
+  const goHomeRow = pig.goHome ? `<div><span class="k">Go Home</span><span class="v">${formatDob(pig.goHome)}</span></div>` : "";
 
   return `
     <article class="registry-card">
@@ -944,9 +945,11 @@ function pigletCardHtml(pig) {
           ${damRow}
           ${coiRow}
           ${dobRow}
+          ${goHomeRow}
         </div>
         <div class="registry-price">
           <span class="amount">${(Number(pig.price) > 0) ? "$" + Number(pig.price).toLocaleString() : "Price on request"}</span>
+          ${pig.regIncluded ? '<span style="display:block;font-size:11.5px;color:var(--ink-soft);margin-top:3px;">Price includes AKKPS registration</span>' : ""}
           ${statusTagHtml(pig)}
         </div>
         <div class="buy-actions more-info-row">

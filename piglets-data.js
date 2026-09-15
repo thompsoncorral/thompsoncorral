@@ -74,46 +74,48 @@ const PIGLETS = [
      (the site only renders piglets with at least one image), so you
      cannot publish a half-finished listing by accident.
 
-     STATUS 2026-09-15: all seven are LIVE with a generated "photos coming
-     soon" image so their flow matches the unregistered piglets exactly.
-     As you take real photos, replace each images array with them — nothing
-     else needs to change. Delete these entries once a piglet is sold.
+     STATUS 2026-09-15: all seven are LIVE at $850 each, which INCLUDES the
+     AKKPS registration. They go home 2026-12-04 (12 weeks), and carry a
+     generated "photos coming soon" image so their flow matches the
+     unregistered piglets exactly. As you take real photos, replace each
+     images array with them — nothing else needs to change. Delete an entry
+     once that piglet is sold.
 
   */
 
   { id: "robin-hood", name: "Robin Hood", sex: "Male", fixedStatus: "Intact", wattles: "Double Wattled",
     regNumber: "AKKPS 67077P", sire: "Coconut", dam: "Peaches", dob: "2026-09-11",
-    price: 850, status: "available", images: ["images/piglets/pending-robin-hood.jpg"],
+    price: 850, status: "available", goHome: "2026-12-04", regIncluded: true, images: ["images/piglets/pending-robin-hood.jpg"],
     bio: "Robin Hood is one of five boars in our September 11, 2026 AKKPS litter, out of our registered sow Peaches (AKKPS 57956) and our registered boar Coconut (AKKPS 57040). Tri-color and double wattled, and recorded with AKKPS as litter notified (AKKPS 67077P), pending individual registration.",
     stripeLink: "", paypalButtonId: "" },
   { id: "little-john", name: "Little John", sex: "Male", fixedStatus: "Intact", wattles: "Double Wattled",
     regNumber: "AKKPS 67078P", sire: "Coconut", dam: "Peaches", dob: "2026-09-11",
-    price: 850, status: "available", images: ["images/piglets/pending-little-john.jpg"],
+    price: 850, status: "available", goHome: "2026-12-04", regIncluded: true, images: ["images/piglets/pending-little-john.jpg"],
     bio: "Little John is one of five boars in our September 11, 2026 AKKPS litter, out of our registered sow Peaches (AKKPS 57956) and our registered boar Coconut (AKKPS 57040). Tri-color and double wattled, and recorded with AKKPS as litter notified (AKKPS 67078P), pending individual registration.",
     stripeLink: "", paypalButtonId: "" },
   { id: "prince-john", name: "Prince John", sex: "Male", fixedStatus: "Intact", wattles: "Double Wattled",
     regNumber: "AKKPS 67079P", sire: "Coconut", dam: "Peaches", dob: "2026-09-11",
-    price: 850, status: "available", images: ["images/piglets/pending-prince-john.jpg"],
+    price: 850, status: "available", goHome: "2026-12-04", regIncluded: true, images: ["images/piglets/pending-prince-john.jpg"],
     bio: "Prince John is one of five boars in our September 11, 2026 AKKPS litter, out of our registered sow Peaches (AKKPS 57956) and our registered boar Coconut (AKKPS 57040). Tri-color and double wattled, and recorded with AKKPS as litter notified (AKKPS 67079P), pending individual registration.",
     stripeLink: "", paypalButtonId: "" },
   { id: "sheriff-of-nottingham", name: "Sheriff of Nottingham", sex: "Male", fixedStatus: "Intact", wattles: "Double Wattled",
     regNumber: "AKKPS 67080P", sire: "Coconut", dam: "Peaches", dob: "2026-09-11",
-    price: 850, status: "available", images: ["images/piglets/pending-sheriff-of-nottingham.jpg"],
+    price: 850, status: "available", goHome: "2026-12-04", regIncluded: true, images: ["images/piglets/pending-sheriff-of-nottingham.jpg"],
     bio: "Sheriff of Nottingham is one of five boars in our September 11, 2026 AKKPS litter, out of our registered sow Peaches (AKKPS 57956) and our registered boar Coconut (AKKPS 57040). Tri-color and double wattled, and recorded with AKKPS as litter notified (AKKPS 67080P), pending individual registration.",
     stripeLink: "", paypalButtonId: "" },
   { id: "friar-tuck", name: "Friar Tuck", sex: "Male", fixedStatus: "Intact", wattles: "Double Wattled",
     regNumber: "AKKPS 67081P", sire: "Coconut", dam: "Peaches", dob: "2026-09-11",
-    price: 850, status: "available", images: ["images/piglets/pending-friar-tuck.jpg"],
+    price: 850, status: "available", goHome: "2026-12-04", regIncluded: true, images: ["images/piglets/pending-friar-tuck.jpg"],
     bio: "Friar Tuck is one of five boars in our September 11, 2026 AKKPS litter, out of our registered sow Peaches (AKKPS 57956) and our registered boar Coconut (AKKPS 57040). Tri-color and double wattled, and recorded with AKKPS as litter notified (AKKPS 67081P), pending individual registration.",
     stripeLink: "", paypalButtonId: "" },
   { id: "maid-marianne", name: "Maid Marianne", sex: "Female", fixedStatus: "Intact", wattles: "Double Wattled",
     regNumber: "AKKPS 67082P", sire: "Coconut", dam: "Peaches", dob: "2026-09-11",
-    price: 850, status: "available", images: ["images/piglets/pending-maid-marianne.jpg"],
+    price: 850, status: "available", goHome: "2026-12-04", regIncluded: true, images: ["images/piglets/pending-maid-marianne.jpg"],
     bio: "Maid Marianne is one of two gilts in our September 11, 2026 AKKPS litter, out of our registered sow Peaches (AKKPS 57956) and our registered boar Coconut (AKKPS 57040). Tri-color and double wattled, and recorded with AKKPS as litter notified (AKKPS 67082P), pending individual registration.",
     stripeLink: "", paypalButtonId: "" },
   { id: "lady-cluck", name: "Lady Cluck", sex: "Female", fixedStatus: "Intact", wattles: "Double Wattled",
     regNumber: "AKKPS 67083P", sire: "Coconut", dam: "Peaches", dob: "2026-09-11",
-    price: 850, status: "available", images: ["images/piglets/pending-lady-cluck.jpg"],
+    price: 850, status: "available", goHome: "2026-12-04", regIncluded: true, images: ["images/piglets/pending-lady-cluck.jpg"],
     bio: "Lady Cluck is one of two gilts in our September 11, 2026 AKKPS litter, out of our registered sow Peaches (AKKPS 57956) and our registered boar Coconut (AKKPS 57040). Tri-color and double wattled, and recorded with AKKPS as litter notified (AKKPS 67083P), pending individual registration.",
     stripeLink: "", paypalButtonId: "" }
 ];
@@ -204,18 +206,19 @@ const PARENT_DETAILS = {
     bloodlines: "Ru / Tonganui",
     regNumber: "AKKPS 57952"
   },
-  /* Peaches is Honey's full sister (same litter, same sire and dam — verified
-     against the AKKPS herd book 2026-09-15). She is the dam of the 9/11/2026 litter.
-     NOTE: the two sisters' "bloodlines" values below do not match each other —
-     Honey is recorded as "Ru / Tonganui" and Peaches as "Ru / Wilsons Gina",
-     but the registry shows both out of MKONO Farm Ru 65 x C & J Farms Wilsons Gina 6.
-     Confirm which is right and make them consistent. */
+  /* Peaches is Honey's full sister — same litter, same sire and dam (MKONO Farm
+     Ru 65 "George" x C & J Farms Wilsons Gina 6 "MOA"), verified against the AKKPS
+     herd book and Eve's own AKKPS pedigree chart on 2026-09-15. The sisters share
+     the same bloodlines line: Ru / Tonganui. Ru runs through the sire's line
+     (Relic Ru 1 "Onyx" -> CJF Ru 4 "Duke") and Tonganui through the dam's side
+     (CJF Tonganui 1 "Rocky", Reserve Supreme Champion). She is the dam of the
+     9/11/2026 litter. */
   "Peaches": {
     regName: "Big Springs Farm Wilsons Gina 2",
     wattles: "Double Wattled",
     dob: "2025-04-20",
     color: "White / Black",
-    bloodlines: "Ru / Wilsons Gina",
+    bloodlines: "Ru / Tonganui",
     regNumber: "AKKPS 57956"
   }
 };

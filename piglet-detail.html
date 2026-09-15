@@ -1079,6 +1079,7 @@ function renderPigletDetail() {
   const coi = getCoi(pig);
   const coiRow = coi ? `<div><span class="k">COI</span><span class="v">${coi}%</span></div>` : "";
   const dobRow = pig.dob ? `<div><span class="k">Birth Date</span><span class="v">${formatDob(pig.dob)}</span></div>` : "";
+  const goHomeRow = pig.goHome ? `<div><span class="k">Goes Home</span><span class="v">${formatDob(pig.goHome)}</span></div>` : "";
   const sexRow = `<div><span class="k">Sex</span><span class="v">${pig.sex}</span></div>`;
   const statusRow = pig.fixedStatus ? `<div><span class="k">Status</span><span class="v">${pig.fixedStatus}</span></div>` : "";
   const wattlesRow = pig.wattles ? `<div><span class="k">Wattles</span><span class="v">${pig.wattles}</span></div>` : "";
@@ -1122,9 +1123,11 @@ function renderPigletDetail() {
           ${damRow}
           ${coiRow}
           ${dobRow}
+          ${goHomeRow}
         </div>
         <div class="detail-price-row">
           <span class="amount">${(Number(pig.price) > 0) ? "$" + Number(pig.price).toLocaleString() : "Price on request"}</span>
+          ${pig.regIncluded ? '<span style="display:block;font-size:12px;color:var(--ink-soft);margin-top:3px;">Price includes AKKPS registration</span>' : ""}
           ${statusTagHtml(pig)}
         </div>
         ${buyActionsHtml(pig)}
