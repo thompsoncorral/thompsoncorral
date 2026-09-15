@@ -913,6 +913,7 @@ function pigletCardHtml(pig) {
   const sealHtml = `<span class="registry-seal">${regStatusLabel(pig.regNumber)}</span>`;
 
   const regRow = pig.regNumber ? `<div><span class="k">Reg #</span><span class="v">${pig.regNumber}</span></div>` : "";
+  const studNameRow = pig.studName ? `<div><span class="k">Registered Name</span><span class="v">${pig.studName}</span></div>` : "";
   const sexRow = pig.sex ? `<div><span class="k">Sex</span><span class="v">${pig.sex}</span></div>` : "";
   const statusRow = pig.fixedStatus ? `<div><span class="k">Status</span><span class="v">${pig.fixedStatus}</span></div>` : "";
   const wattlesRow = pig.wattles ? `<div><span class="k">Wattles</span><span class="v">${pig.wattles}</span></div>` : "";
@@ -938,6 +939,7 @@ function pigletCardHtml(pig) {
         <p class="registry-bio">${pig.bio}</p>
         <div class="registry-data">
           ${regRow}
+          ${studNameRow}
           ${sexRow}
           ${statusRow}
           ${wattlesRow}
