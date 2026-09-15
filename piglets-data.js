@@ -203,7 +203,7 @@ const PARENT_DETAILS = {
     wattles: "Double Wattled",
     dob: "2025-04-20",
     color: "Ginger / White",
-    bloodlines: "Ru / Tonganui",
+    bloodlines: "Ru / Wilsons Gina",
     regNumber: "AKKPS 57952"
   },
   /* Peaches is Honey's full sister — same litter, same sire and dam (MKONO Farm
@@ -218,7 +218,7 @@ const PARENT_DETAILS = {
     wattles: "Double Wattled",
     dob: "2025-04-20",
     color: "White / Black",
-    bloodlines: "Ru / Tonganui",
+    bloodlines: "Ru / Wilsons Gina",
     regNumber: "AKKPS 57956"
   }
 };
