@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# Individual piglet pages are rendered from a single template with ?id= query strings.
+# They are intentionally left crawlable but out of the sitemap.
+Sitemap: https://thompsoncorral.com/sitemap.xml

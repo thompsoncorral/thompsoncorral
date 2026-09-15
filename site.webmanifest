@@ -1,0 +1,21 @@
+{
+  "name": "Thompson Corral",
+  "short_name": "Thompson Corral",
+  "description": "Registered Brown Swiss cattle and AKKPS-registered KuneKune pigs in North Central Arkansas.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FBF6EE",
+  "theme_color": "#A6522E",
+  "icons": [
+    {
+      "src": "/images/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
