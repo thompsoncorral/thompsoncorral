@@ -55,6 +55,47 @@ const PIGLETS = [
     paypalButtonId: ""
   }
   */
+
+  /* ============================================================
+     THE 9/11/2026 LITTER — seven piglets
+     Sire: Coconut (AKKPS 57040)   Dam: Peaches (AKKPS 57956)
+     Born 2026-09-11. All tri-color, all double wattled.
+     Status with AKKPS: LITTER NOTIFIED (the "P" suffix) — not yet
+     individually registered. Data verified against the AKKPS herd
+     book on 2026-09-15.
+
+     TO PUBLISH ONE, three things are needed:
+       1. a name         -> fill in "name"
+       2. a real price   -> replace 0 with the number (right now 0
+                            would display as "$0", so do not skip it)
+       3. one photo      -> put the path in "images"
+     To publish, delete the comment marker lines around that piglet.
+     Until a piglet has a photo it stays off the page automatically
+     (the site only renders piglets with at least one image), so you
+     cannot publish a half-finished listing by accident.
+
+  { id: "litter-67077p", name: "", sex: "Male", fixedStatus: "Intact", wattles: "Double Wattled",
+    regNumber: "AKKPS 67077P", sire: "Coconut", dam: "Peaches", dob: "2026-09-11",
+    price: 0, status: "available", images: [], bio: "", stripeLink: "", paypalButtonId: "" },
+  { id: "litter-67078p", name: "", sex: "Male", fixedStatus: "Intact", wattles: "Double Wattled",
+    regNumber: "AKKPS 67078P", sire: "Coconut", dam: "Peaches", dob: "2026-09-11",
+    price: 0, status: "available", images: [], bio: "", stripeLink: "", paypalButtonId: "" },
+  { id: "litter-67079p", name: "", sex: "Male", fixedStatus: "Intact", wattles: "Double Wattled",
+    regNumber: "AKKPS 67079P", sire: "Coconut", dam: "Peaches", dob: "2026-09-11",
+    price: 0, status: "available", images: [], bio: "", stripeLink: "", paypalButtonId: "" },
+  { id: "litter-67080p", name: "", sex: "Male", fixedStatus: "Intact", wattles: "Double Wattled",
+    regNumber: "AKKPS 67080P", sire: "Coconut", dam: "Peaches", dob: "2026-09-11",
+    price: 0, status: "available", images: [], bio: "", stripeLink: "", paypalButtonId: "" },
+  { id: "litter-67081p", name: "", sex: "Male", fixedStatus: "Intact", wattles: "Double Wattled",
+    regNumber: "AKKPS 67081P", sire: "Coconut", dam: "Peaches", dob: "2026-09-11",
+    price: 0, status: "available", images: [], bio: "", stripeLink: "", paypalButtonId: "" },
+  { id: "litter-67082p", name: "", sex: "Female", fixedStatus: "Intact", wattles: "Double Wattled",
+    regNumber: "AKKPS 67082P", sire: "Coconut", dam: "Peaches", dob: "2026-09-11",
+    price: 0, status: "available", images: [], bio: "", stripeLink: "", paypalButtonId: "" },
+  { id: "litter-67083p", name: "", sex: "Female", fixedStatus: "Intact", wattles: "Double Wattled",
+    regNumber: "AKKPS 67083P", sire: "Coconut", dam: "Peaches", dob: "2026-09-11",
+    price: 0, status: "available", images: [], bio: "", stripeLink: "", paypalButtonId: "" }
+  */
 ];
 
 /* ============================================================
@@ -142,6 +183,20 @@ const PARENT_DETAILS = {
     color: "Ginger / White",
     bloodlines: "Ru / Tonganui",
     regNumber: "AKKPS 57952"
+  },
+  /* Peaches is Honey's full sister (same litter, same sire and dam — verified
+     against the AKKPS herd book 2026-09-15). She is the dam of the 9/11/2026 litter.
+     NOTE: the two sisters' "bloodlines" values below do not match each other —
+     Honey is recorded as "Ru / Tonganui" and Peaches as "Ru / Wilsons Gina",
+     but the registry shows both out of MKONO Farm Ru 65 x C & J Farms Wilsons Gina 6.
+     Confirm which is right and make them consistent. */
+  "Peaches": {
+    regName: "Big Springs Farm Wilsons Gina 2",
+    wattles: "Double Wattled",
+    dob: "2025-04-20",
+    color: "White / Black",
+    bloodlines: "Ru / Wilsons Gina",
+    regNumber: "AKKPS 57956"
   }
 };
 
