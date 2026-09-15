@@ -208,11 +208,19 @@ const PARENT_DETAILS = {
   },
   /* Peaches is Honey's full sister — same litter, same sire and dam (MKONO Farm
      Ru 65 "George" x C & J Farms Wilsons Gina 6 "MOA"), verified against the AKKPS
-     herd book and Eve's own AKKPS pedigree chart on 2026-09-15. The sisters share
-     the same bloodlines line: Ru / Tonganui. Ru runs through the sire's line
-     (Relic Ru 1 "Onyx" -> CJF Ru 4 "Duke") and Tonganui through the dam's side
-     (CJF Tonganui 1 "Rocky", Reserve Supreme Champion). She is the dam of the
-     9/11/2026 litter. */
+     herd book and Eve's own AKKPS pedigree chart on 2026-09-15.
+
+     Bloodlines are written sire line / dam line — the same convention already used
+     for Coconut ("Whakanui / Haunene"). Ru is the boar line: MKONO Farm Ru 65, back
+     through Relic Ru 1 "Onyx" to CJF Ru 4 "Duke". Wilsons Gina is the sow line:
+     their dam, C & J Farms Wilsons Gina 6. Both sisters carry "Wilsons Gina" in
+     their own registered names, which is how AKKPS names female piglets.
+
+     Do not write Tonganui here: it is itself a BOAR line, so "Ru / Tonganui" would
+     be two boar lines and matches no convention. Tonganui reaches the sisters only
+     through their dam's sire, CJF Tonganui 1 "Rocky" (Reserve Supreme Champion) —
+     that belongs in prose on the herd page, not in this field.
+     She is the dam of the 9/11/2026 litter. */
   "Peaches": {
     regName: "Big Springs Farm Wilsons Gina 2",
     wattles: "Double Wattled",
