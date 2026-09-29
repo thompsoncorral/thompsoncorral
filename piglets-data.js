@@ -201,7 +201,7 @@ const RESERVATION_FORM_PIGLET_ENTRY_ID = "2037063654";
    exactly) to show that parent's photo; unmatched names just show as text. */
 const PARENT_PHOTOS = {
   "Coconut": "https://static.wixstatic.com/media/d72fc0_d86e2d82713d4c0a8899aaf82e4b84fc~mv2.jpg/v1/fill/w_443,h_431,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/DSC_6263.jpg",
-  "Bluey": "https://static.wixstatic.com/media/d72fc0_fe4748d8e24a4bafa123f573460a12aa~mv2.jpg/v1/fill/w_368,h_515,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/d72fc0_fe4748d8e24a4bafa123f573460a12aa~mv2.jpg",
+  "Bluey": "images/kunekune/bluey.jpg",
   "Mia": "images/kunekune/mia.jpg",
   "Bingo": "images/kunekune/Bingo.jpg"
 };
