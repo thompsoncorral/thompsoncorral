@@ -13,8 +13,8 @@
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Thompson Corral | Registered Brown Swiss Cattle &amp; KuneKune Pigs</title>
-  <meta name="description" content="Family-owned farm raising registered Brown Swiss cattle and AKKPS-registered KuneKune pigs in Arkansas. Pedigree-tracked, pasture-raised." />
+  <title>AKKPS Registered KuneKune Piglets For Sale | Thompson Corral</title>
+  <meta name="description" content="AKKPS registered KuneKune piglets for sale in Arkansas from Thompson Corral &mdash; registered bloodlines, registration included, reserve online." />
   <style>
 /* ============================================================
    Thompson Corral — Option B: Warm Farmhouse
@@ -458,9 +458,10 @@ a { color: inherit; }
   aspect-ratio: 4 / 3.2;
   overflow: hidden;
   border-bottom: 1px solid var(--tan-border);
+  background: var(--cream-deep);
 }
 
-.registry-photo img { width: 100%; height: 100%; object-fit: cover; }
+.registry-photo img { width: 100%; height: 100%; object-fit: contain; }
 
 .registry-seal {
   position: absolute;
@@ -476,7 +477,48 @@ a { color: inherit; }
   text-transform: uppercase;
 }
 
-.registry-body { padding: 18px 18px 20px; }
+.registry-thumbs {
+    display: flex;
+    gap: 6px;
+    padding: 10px 14px 0;
+}
+    
+    .registry-thumb {
+        flex: 1;
+        aspect-ratio: 1;
+        padding: 0;
+        border: 2px solid transparent;
+        border-radius: 6px;
+        overflow: hidden;
+        background: var(--cream-deep);
+        cursor: pointer;
+        transition: border-color 0.15s ease;
+    }
+    
+    .registry-thumb img { width: 100%; height: 100%; object-fit: contain; display: block; }
+    
+    .registry-thumb:hover { border-color: var(--rust-light); }
+    .registry-thumb.is-active { border-color: var(--rust); }
+
+.filter-banner {
+  background: var(--cream-deep);
+  border: 1px solid var(--tan-border);
+  border-radius: 8px;
+  padding: 14px 18px;
+  margin-bottom: 32px;
+  text-align: center;
+  font-size: 14.5px;
+}
+
+.filter-banner a {
+  font-weight: 700;
+  color: var(--rust);
+  border-bottom: 1px solid var(--rust);
+  text-decoration: none;
+  padding-bottom: 1px;
+}
+    
+    .registry-body { padding: 18px 18px 20px; }
 
 .registry-name-row {
   display: flex;
@@ -533,6 +575,20 @@ a { color: inherit; }
   font-family: var(--font-display);
   font-size: 21px;
   color: var(--rust);
+}
+
+.registry-photo-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--cream-deep);
+  color: var(--ink-soft);
+  font-size: 12.5px;
+  font-weight: 700;
+  text-align: center;
+  border: 2px dashed var(--tan-border);
 }
 
 .status-tag {
@@ -619,7 +675,7 @@ a { color: inherit; }
 .footer-brand {
   font-family: var(--font-display);
   color: var(--cream);
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .footer-links { display: flex; gap: 18px; flex-wrap: wrap; }
@@ -644,7 +700,7 @@ a { color: inherit; }
 
   </style>
   <!-- == SEO additions: canonical, social cards, structured data (2026-09-15) == -->
-  <link rel="canonical" href="https://thompsoncorral.com/" />
+  <link rel="canonical" href="https://thompsoncorral.com/piglets.html" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <meta name="theme-color" content="#A6522E" />
   <meta name="author" content="Thompson Corral" />
@@ -653,20 +709,20 @@ a { color: inherit; }
   <meta property="og:site_name" content="Thompson Corral" />
   <meta property="og:locale" content="en_US" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Thompson Corral | Registered Brown Swiss Cattle &amp; KuneKune Pigs" />
-  <meta property="og:description" content="Family-owned farm raising registered Brown Swiss cattle and AKKPS-registered KuneKune pigs in Arkansas. Pedigree-tracked, pasture-raised." />
-  <meta property="og:url" content="https://thompsoncorral.com/" />
-  <meta property="og:image" content="https://thompsoncorral.com/images/og/og-default.jpg" />
-  <meta property="og:image:secure_url" content="https://thompsoncorral.com/images/og/og-default.jpg" />
+  <meta property="og:title" content="Piglets For Sale | Thompson Corral" />
+  <meta property="og:description" content="AKKPS KuneKune piglets for sale in Arkansas — registered bloodlines, litter notified with AKKPS, plus unregistered piglets from Thompson Corral." />
+  <meta property="og:url" content="https://thompsoncorral.com/piglets.html" />
+  <meta property="og:image" content="https://thompsoncorral.com/images/og/og-piglets.jpg" />
+  <meta property="og:image:secure_url" content="https://thompsoncorral.com/images/og/og-piglets.jpg" />
   <meta property="og:image:type" content="image/jpeg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Brown Swiss cattle on pasture at Thompson Corral" />
+  <meta property="og:image:alt" content="KuneKune piglets for sale at Thompson Corral" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Thompson Corral | Registered Brown Swiss Cattle &amp; KuneKune Pigs" />
-  <meta name="twitter:description" content="Family-owned farm raising registered Brown Swiss cattle and AKKPS-registered KuneKune pigs in Arkansas. Pedigree-tracked, pasture-raised." />
-  <meta name="twitter:image" content="https://thompsoncorral.com/images/og/og-default.jpg" />
-  <meta name="twitter:image:alt" content="Brown Swiss cattle on pasture at Thompson Corral" />
+  <meta name="twitter:title" content="Piglets For Sale | Thompson Corral" />
+  <meta name="twitter:description" content="AKKPS KuneKune piglets for sale in Arkansas — registered bloodlines, litter notified with AKKPS, plus unregistered piglets from Thompson Corral." />
+  <meta name="twitter:image" content="https://thompsoncorral.com/images/og/og-piglets.jpg" />
+  <meta name="twitter:image:alt" content="KuneKune piglets for sale at Thompson Corral" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192x192.png" />
@@ -677,59 +733,11 @@ a { color: inherit; }
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Organization",
-      "@id": "https://thompsoncorral.com/#organization",
-      "name": "Thompson Corral",
-      "url": "https://thompsoncorral.com/",
-      "description": "Family-owned farm in North Central Arkansas raising registered Brown Swiss cattle and AKKPS-registered KuneKune pigs on pasture, with pedigree-tracked bloodlines.",
-      "logo": {
-        "@type": "ImageObject",
-        "@id": "https://thompsoncorral.com/#logo",
-        "url": "https://thompsoncorral.com/images/apple-touch-icon.png",
-        "width": 180,
-        "height": 180,
-        "caption": "Thompson Corral"
-      },
-      "image": {
-        "@id": "https://thompsoncorral.com/#logo"
-      },
-      "sameAs": [
-        "https://www.facebook.com/thompsoncorral"
-      ],
-      "address": {
-        "@type": "PostalAddress",
-        "addressRegion": "AR",
-        "addressCountry": "US"
-      },
-      "areaServed": {
-        "@type": "AdministrativeArea",
-        "name": "North Central Arkansas"
-      },
-      "knowsAbout": [
-        "KuneKune pigs",
-        "AKKPS registered KuneKune piglets",
-        "Brown Swiss cattle",
-        "heritage livestock breeding",
-        "registered livestock in Arkansas"
-      ]
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://thompsoncorral.com/#website",
-      "url": "https://thompsoncorral.com/",
-      "name": "Thompson Corral",
-      "description": "Family-owned farm raising registered Brown Swiss cattle and AKKPS-registered KuneKune pigs in Arkansas. Pedigree-tracked, pasture-raised.",
-      "publisher": {
-        "@id": "https://thompsoncorral.com/#organization"
-      },
-      "inLanguage": "en-US"
-    },
-    {
       "@type": "WebPage",
-      "@id": "https://thompsoncorral.com/#webpage",
-      "url": "https://thompsoncorral.com/",
-      "name": "Thompson Corral | Registered Brown Swiss Cattle & KuneKune Pigs",
-      "description": "Family-owned farm raising registered Brown Swiss cattle and AKKPS-registered KuneKune pigs in Arkansas. Pedigree-tracked, pasture-raised.",
+      "@id": "https://thompsoncorral.com/piglets.html#webpage",
+      "url": "https://thompsoncorral.com/piglets.html",
+      "name": "Piglets For Sale | Thompson Corral",
+      "description": "AKKPS KuneKune piglets for sale in Arkansas — registered bloodlines, litter notified with AKKPS, plus unregistered piglets from Thompson Corral.",
       "inLanguage": "en-US",
       "isPartOf": {
         "@id": "https://thompsoncorral.com/#website"
@@ -739,11 +747,42 @@ a { color: inherit; }
       },
       "primaryImageOfPage": {
         "@type": "ImageObject",
-        "url": "https://thompsoncorral.com/images/og/og-default.jpg",
+        "url": "https://thompsoncorral.com/images/og/og-piglets.jpg",
         "width": 1200,
         "height": 630
       },
       "dateModified": "2026-09-15"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://thompsoncorral.com/piglets.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://thompsoncorral.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Piglets For Sale",
+          "item": "https://thompsoncorral.com/piglets.html"
+        }
+      ]
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://thompsoncorral.com/piglets.html#collection",
+      "url": "https://thompsoncorral.com/piglets.html",
+      "name": "Piglets For Sale | Thompson Corral",
+      "description": "AKKPS KuneKune piglets for sale in Arkansas — registered bloodlines, litter notified with AKKPS, plus unregistered piglets from Thompson Corral.",
+      "about": {
+        "@id": "https://thompsoncorral.com/#organization"
+      },
+      "isPartOf": {
+        "@id": "https://thompsoncorral.com/#website"
+      }
     }
   ]
 }
@@ -758,82 +797,50 @@ a { color: inherit; }
         <span class="brand-text">Thompson Corral<small>Registered Livestock &middot; Arkansas</small></span>
       </a>
       <nav class="main-nav" aria-label="Main">
-        <a href="index.html" class="current">Home</a>
+        <a href="index.html">Home</a>
         <a href="cattle.html">Brown Swiss</a>
         <a href="kunekune.html">Kune Kune</a>
-        <a href="piglets.html">Piglets For Sale</a>
+        <a href="piglets.html" class="current">Piglets For Sale</a>
       </nav>
     </div>
   </header>
 
   <section class="hero">
-    <p class="hero-eyebrow">Family Farm &middot; North Central, Arkansas</p>
-    <h1>Thompson Corral</h1>
-    <p>Our herd and KuneKune program are built around sound genetics, careful selection, and a commitment to preserving the qualities that make these breeds exceptional.</p>
+    <p class="hero-eyebrow">AKKPS Registered Stock</p>
+    <h1>AKKPS Registered KuneKune Piglets</h1>
+    <p>Piglets from our registered AKKPS herd &mdash; dam Peaches (AKKPS 57956) and sire Coconut (AKKPS 57040). Each one is recorded with AKKPS as litter notified, and the price includes its individual registration.</p>
+  </section>
+
+  <section class="section" style="padding:26px 0 0;">
+    <div class="wrap" style="text-align:center;">
+      <p class="section-eyebrow" style="margin-bottom:4px;">You are viewing AKKPS registered piglets</p>
+      <p style="margin:0;"><a href="piglets.html">See our unregistered piglets</a></p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:56px;">
     <div class="wrap">
-      <div class="hero-photo">
-        <img src="https://static.wixstatic.com/media/d72fc0_9d255b0f9a2544aea82fc26763694b7c~mv2.jpg" alt="Herd of Brown Swiss cattle on pasture" />
+      <div id="dam-filter-banner" style="display:none;"></div>
+
+      <div id="registered-section-content">
+        <div class="section-head">
+          <p class="section-eyebrow" id="registered-eyebrow">AKKPS Litter Notified &middot; Registration In Progress</p>
+          <h2 id="registered-heading">AKKPS KuneKune Piglets</h2>
+        </div>
+
+        <div id="piglet-grid" class="registry-grid" aria-live="polite">
+          <!-- Rendered by the PIGLETS array in piglets-data.js -->
+        </div>
       </div>
     </div>
   </section>
+
 
   <section class="section">
     <div class="wrap">
-      <div class="section-head">
-        <p class="section-eyebrow">What's Happening on the Farm</p>
-        <h2>Two Breeds, One Standard</h2>
-        <p>Heritage livestock. Thoughtful breeding. A legacy for generations to come.</p>
-      </div>
-
-      <div class="feature-grid">
-        <div class="feature-card">
-          <div style="position:relative;">
-            <img src="https://static.wixstatic.com/media/d72fc0_d86e2d82713d4c0a8899aaf82e4b84fc~mv2.jpg/v1/crop/x_0,y_551,w_3615,h_1318/fill/w_800,h_400,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/DSC_6263.jpg" alt="KuneKune pig at Thompson Corral" style="height:200px; object-fit:cover; width:100%; display:block;" />
-            <img src="images/akkps-exclusive-breeder.png" alt="AKKPS Exclusive Breeder" title="AKKPS Exclusive Breeder" style="position:absolute; top:10px; right:10px; width:60px; height:60px; border-radius:50%; box-shadow:0 4px 10px rgba(59,46,34,0.35);" />
-          </div>
-          <div class="feature-card-body">
-            <h3>Kune Kune</h3>
-            <p>A carefully planned AKKPS-registered breeding program, using pedigree analysis to keep every litter genetically diverse and healthy.</p>
-            <div class="feature-links">
-              <a href="kunekune.html">Meet the Herd</a>
-              <a href="piglets.html">Piglets For Sale</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="feature-card">
-          <img src="https://static.wixstatic.com/media/d72fc0_902e5341263548259e4d2f72001aff72~mv2.jpg" alt="Brown Swiss cattle at Thompson Corral" />
-          <div class="feature-card-body">
-            <h3>Brown Swiss</h3>
-            <p>Registered Brown Swiss raised for dairy and meat, on all-natural, pesticide-free hay grown right here on the farm.</p>
-            <div class="feature-links">
-              <a href="cattle.html">Meet the Herd</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section-alt">
-    <div class="wrap">
-      <div class="ethos-strip">
-        <div class="ethos-item">
-          <div class="ethos-medal"><span class="ethos-icon">🌿</span><strong>Grass Fed Herd</strong></div>
-          <div class="ethos-ribbons"><span class="ethos-ribbon left"></span><span class="ethos-ribbon right"></span></div>
-        </div>
-        <div class="ethos-item">
-          <div class="ethos-medal"><span class="ethos-icon">✓</span><strong>No Antibiotics or Growth Hormones</strong></div>
-          <div class="ethos-ribbons"><span class="ethos-ribbon left"></span><span class="ethos-ribbon right"></span></div>
-        </div>
-        <div class="ethos-item">
-          <div class="ethos-medal"><span class="ethos-icon">🌾</span><strong>On-Site Hay Production</strong></div>
-          <div class="ethos-ribbons"><span class="ethos-ribbon left"></span><span class="ethos-ribbon right"></span></div>
-        </div>
-        <div class="ethos-item">
-          <div class="ethos-medal"><span class="ethos-icon">📜</span><strong>Pedigree-Tracked Bloodlines</strong></div>
-          <div class="ethos-ribbons"><span class="ethos-ribbon left"></span><span class="ethos-ribbon right"></span></div>
-        </div>
+      <div class="prose" style="text-align:center;">
+        <p>Don't see the piglet you're looking for? We plan future litters throughout the year &mdash; sign up to be notified about the next one.</p>
+        <p><a class="btn btn-barn" href="notify.html">Join the Waitlist</a></p>
       </div>
     </div>
   </section>
@@ -860,5 +867,201 @@ a { color: inherit; }
   </footer>
 
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="piglets-data.js"></script>
+  <script>
+function getQueryParam(name) {
+  return new URLSearchParams(window.location.search).get(name);
+}
+
+/* AKKPS registration-number suffixes mean different things, so a piglet must
+   never be labelled "Registered" just because it has a number:
+     no suffix = fully registered, breeding rights
+     P         = litter notified, NOT yet registered
+     A         = companion animal, no breeding rights
+     MP        = animal for harvest, no breeding rights
+     OB        = under observation, no breeding rights               */
+function regStatusLabel(regNumber) {
+  if (!regNumber) return "Unregistered";
+  const m = String(regNumber).trim().match(/([A-Za-z+]+)\s*$/);
+  const suffix = m ? m[1].toUpperCase() : "";
+  if (suffix === "P") return "AKKPS Litter Notified";
+  if (suffix === "A") return "AKKPS Companion Animal";
+  if (suffix === "MP") return "AKKPS Harvest Animal";
+  if (suffix === "OB") return "AKKPS Under Observation";
+  return "AKKPS Registered";
+}
+function isFullyRegistered(regNumber) {
+  return !!regNumber && regStatusLabel(regNumber) === "AKKPS Registered";
+}
+function regTagline(regNumber) {
+  if (!regNumber) return "Unregistered KuneKune piglet";
+  return isFullyRegistered(regNumber)
+    ? "AKKPS-registered KuneKune piglet"
+    : "AKKPS litter-notified KuneKune piglet";
+}
+
+function pigletCardHtml(pig) {
+  const images = pig.images || [];
+  const photoHtml = images.length
+    ? `<img src="${images[0]}" alt="${pig.name}, ${pig.sex.toLowerCase()} KuneKune piglet" loading="lazy" class="registry-main-photo" />`
+    : `<div class="registry-photo-placeholder">Photo Coming Soon</div>`;
+
+  const thumbsHtml = images.length > 1
+    ? `<div class="registry-thumbs">${images.map((src, i) => `
+        <button type="button" class="registry-thumb${i === 0 ? " is-active" : ""}" data-src="${src}" aria-label="Show photo ${i + 1} of ${pig.name}">
+          <img src="${src}" alt="" loading="lazy" />
+        </button>`).join("")}</div>`
+    : "";
+
+  const sealHtml = `<span class="registry-seal">${regStatusLabel(pig.regNumber)}</span>`;
+
+  const regRow = pig.regNumber ? `<div><span class="k">Reg #</span><span class="v">${pig.regNumber}</span></div>` : "";
+  const studNameRow = pig.studName ? `<div><span class="k">Registered Name</span><span class="v">${pig.studName}</span></div>` : "";
+  const sexRow = pig.sex ? `<div><span class="k">Sex</span><span class="v">${pig.sex}</span></div>` : "";
+  const statusRow = pig.fixedStatus ? `<div><span class="k">Status</span><span class="v">${pig.fixedStatus}</span></div>` : "";
+  const wattlesRow = pig.wattles ? `<div><span class="k">Wattles</span><span class="v">${pig.wattles}</span></div>` : "";
+  const sireRow = pig.sire ? `<div><span class="k">Sire</span><span class="v">${pig.sire}</span></div>` : "";
+  const damRow = pig.dam ? `<div><span class="k">Dam</span><span class="v">${pig.dam}</span></div>` : "";
+  const coi = getCoi(pig);
+  const coiRow = coi ? `<div><span class="k">COI</span><span class="v">${coi}%</span></div>` : "";
+  const dobRow = pig.dob ? `<div><span class="k">DOB</span><span class="v">${formatDob(pig.dob)}</span></div>` : "";
+  const goHomeRow = pig.goHome ? `<div><span class="k">Go Home</span><span class="v">${formatDob(pig.goHome)}</span></div>` : "";
+
+  return `
+    <article class="registry-card">
+      <div class="registry-photo">
+        ${photoHtml}
+        ${sealHtml}
+      </div>
+      ${thumbsHtml}
+      <div class="registry-body">
+        <div class="registry-name-row">
+          <h3 class="registry-name">${pig.name}</h3>
+          <span class="registry-role">${pig.sex}</span>
+        </div>
+        <p class="registry-bio">${pig.bio}</p>
+        <div class="registry-data">
+          ${regRow}
+          ${studNameRow}
+          ${sexRow}
+          ${statusRow}
+          ${wattlesRow}
+          ${sireRow}
+          ${damRow}
+          ${coiRow}
+          ${dobRow}
+          ${goHomeRow}
+        </div>
+        <div class="registry-price">
+          <span class="amount">${(Number(pig.price) > 0) ? "$" + Number(pig.price).toLocaleString() : "Price on request"}</span>
+          ${pig.regIncluded ? '<span style="display:block;font-size:11.5px;color:var(--ink-soft);margin-top:3px;">Price includes AKKPS registration</span>' : ""}
+          ${statusTagHtml(pig)}
+        </div>
+        <div class="buy-actions more-info-row">
+          <a class="btn btn-outline btn-block" href="piglet-detail.html?id=${encodeURIComponent(pig.id)}">More Info</a>
+        </div>
+        ${buyActionsHtml(pig)}
+      </div>
+    </article>
+  `;
+}
+
+/* Only piglets with at least one real photo are shown on the site — a piglet
+   added to the data file before its photos are ready (images: []) simply
+   stays off the page until photos are filled in, no other editing needed. */
+function hasPhotos(pig) {
+  return Array.isArray(pig.images) && pig.images.length > 0;
+}
+
+function renderGrid(elId, list, emptyMessage) {
+  const el = document.getElementById(elId);
+  if (!el) return;
+  if (!list.length) {
+    el.innerHTML = `<p class="prose" style="text-align:center;">${emptyMessage}</p>`;
+    return;
+  }
+  el.innerHTML = list.map(pigletCardHtml).join("");
+}
+
+function renderPiglets() {
+  const damFilter = getQueryParam("dam");
+  const banner = document.getElementById("dam-filter-banner");
+
+  let piglets = PIGLETS.filter(hasPhotos);
+  let unregistered = UNREGISTERED_PIGLETS.filter(hasPhotos);
+  let regEyebrow = "AKKPS Litter Notified \u00b7 Registration In Progress";
+  let regHeading = "AKKPS KuneKune Piglets";
+  let unregEyebrow = "Also Currently Available";
+  let unregHeading = "Unregistered Piglets";
+  let regEmpty = `Our new AKKPS litter arrived <strong>September 11, 2026</strong> — seven tri-color KuneKune piglets, five boars and two gilts, out of our registered sow Peaches (AKKPS 57956) and our registered boar Coconut (AKKPS 57040). All seven are double wattled and are recorded with AKKPS as litter notified (AKKPS 67077P–67083P), pending individual registration. The gilts are <strong>Maid Marianne</strong> and <strong>Lady Cluck</strong>; the boars are <strong>Robin Hood</strong>, <strong>Little John</strong>, <strong>Prince John</strong>, <strong>Sheriff of Nottingham</strong>, and <strong>Friar Tuck</strong>. Photos, pricing, and pickup dates will be posted here as they wean and are ready to go home — email ${RESERVE_EMAIL} to be told first.`;
+  let unregEmpty = `No unregistered piglets currently listed — check back soon, or email ${RESERVE_EMAIL} to join the waitlist.`;
+
+  if (damFilter) {
+    piglets = piglets.filter((p) => p.dam && p.dam.toLowerCase() === damFilter.toLowerCase());
+    unregistered = unregistered.filter((p) => p.dam && p.dam.toLowerCase() === damFilter.toLowerCase());
+    regEyebrow = "Showing Only";
+    regHeading = `${damFilter}'s AKKPS Piglets`;
+    unregEyebrow = "Showing Only";
+    unregHeading = `${damFilter}'s Unregistered Piglets`;
+    regEmpty = `${damFilter} has no AKKPS piglets currently listed. <a href="registered-piglets.html">View All Registered Piglets</a>.`;
+    unregEmpty = `${damFilter} has no unregistered piglets currently listed. <a href="piglets.html">View All Piglets</a>.`;
+    const unregMatches = UNREGISTERED_PIGLETS.filter(hasPhotos)
+      .filter((p) => p.dam && p.dam.toLowerCase() === damFilter.toLowerCase()).length;
+    const unregHint = unregMatches
+      ? ` Unregistered piglets from ${damFilter} are on the <a href="piglets.html?dam=${encodeURIComponent(damFilter)}">unregistered piglets page</a>.`
+      : "";
+    if (banner) {
+      banner.innerHTML = `<p style="margin:0;">Showing only <strong>${damFilter}'s</strong> AKKPS piglets. <a href="registered-piglets.html">View All Registered Piglets</a>${unregHint}</p>`;
+      banner.className = "filter-banner";
+      banner.style.display = "block";
+    }
+    document.title = `${damFilter}'s AKKPS Piglets | Thompson Corral`;
+  } else if (banner) {
+    banner.style.display = "none";
+    banner.innerHTML = "";
+  }
+
+  /* Each piglet page carries only one of the two listings, so write the
+     heading only where the page actually has one. */
+  [["registered-eyebrow", regEyebrow], ["registered-heading", regHeading],
+   ["unregistered-eyebrow", unregEyebrow], ["unregistered-heading", unregHeading]]
+    .forEach(([id, text]) => {
+      const el = document.getElementById(id);
+      if (el) el.textContent = text;
+    });
+
+  renderGrid("piglet-grid", piglets, regEmpty);
+  renderGrid("unregistered-grid", unregistered, unregEmpty);
+
+  /* When viewing a single dam's piglets, a dam is either registered or
+     unregistered stock — she'll never have offspring in the other bucket.
+     So when filtered, hide whichever side has zero matches entirely
+     (heading, description, and empty-state text and all) instead of
+     showing a "no piglets" message for a category that will never apply. */
+  const registeredContent = document.getElementById("registered-section-content");
+  const unregisteredContent = document.getElementById("unregistered-section-content");
+  if (registeredContent) {
+    registeredContent.style.display = damFilter && !piglets.length ? "none" : "";
+  }
+  if (unregisteredContent) {
+    unregisteredContent.style.display = damFilter && !unregistered.length ? "none" : "";
+  }
+}
+
+document.addEventListener("DOMContentLoaded", renderPiglets);
+
+/* Photo gallery: clicking a thumbnail swaps the main photo for that piglet's card. */
+document.addEventListener("click", (event) => {
+  const thumb = event.target.closest(".registry-thumb");
+  if (!thumb) return;
+  const card = thumb.closest(".registry-card");
+  const mainPhoto = card && card.querySelector(".registry-main-photo");
+  if (!mainPhoto || !thumb.dataset.src) return;
+  mainPhoto.src = thumb.dataset.src;
+  card.querySelectorAll(".registry-thumb").forEach((t) => t.classList.remove("is-active"));
+  thumb.classList.add("is-active");
+});
+
+  </script>
 </body>
 </html>

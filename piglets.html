@@ -808,23 +808,26 @@ a { color: inherit; }
   <section class="hero">
     <p class="hero-eyebrow">Available Now</p>
     <h1>KuneKune Piglets For Sale in Arkansas</h1>
-    <p>KuneKune piglets from AKKPS-registered stock and unregistered litters, raised on our North Central Arkansas farm. Reserve online, or email us to be added to the waitlist for the next litter.</p>
+    <p>Healthy KuneKune piglets from our herd that aren't AKKPS-papered &mdash; same farm, same care, no registration paperwork. Reserve online, or email us to be added to the waitlist for the next litter.</p>
   </section>
 
-  <section class="section" style="padding-top:56px;">
+  <section class="section" style="padding:26px 0 0;">
+    <div class="wrap" style="text-align:center;">
+      <p class="section-eyebrow" style="margin-bottom:4px;">You are viewing unregistered piglets</p>
+      <p style="margin:0;"><a href="registered-piglets.html">See our AKKPS registered piglets</a></p>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="registered-pointer" style="padding-top:56px;">
     <div class="wrap">
-      <div id="dam-filter-banner" style="display:none;"></div>
-
-      <div id="registered-section-content">
-        <div class="section-head">
-          <p class="section-eyebrow" id="registered-eyebrow">AKKPS Litter Notified &middot; Registration In Progress</p>
-          <h2 id="registered-heading">AKKPS KuneKune Piglets</h2>
-        </div>
-
-        <div id="piglet-grid" class="registry-grid" aria-live="polite">
-          <!-- Rendered by the PIGLETS array in piglets-data.js -->
-        </div>
+      <div class="section-head">
+        <p class="section-eyebrow">AKKPS Registered Stock</p>
+        <h2>AKKPS Registered Piglets</h2>
+        <p>Our AKKPS-registered and litter-notified piglets now have their own page &mdash; with registry numbers, parentage and the AKKPS litter details.</p>
       </div>
+      <p style="text-align:center; margin:0;">
+        <a class="btn btn-barn" href="registered-piglets.html">View AKKPS Registered Piglets</a>
+      </p>
     </div>
   </section>
 
@@ -866,6 +869,7 @@ a { color: inherit; }
           <a href="cattle.html">Brown Swiss</a>
           <a href="kunekune.html">Kune Kune</a>
           <a href="piglets.html">Piglets For Sale</a>
+          <a href="registered-piglets.html">Registered Piglets</a>
           <a href="notify.html">Get Litter Notifications</a> <a href="faq.html">FAQ</a> <a href="kunekune-101.html">KuneKune 101</a> <a href="AKKPS-Registered-KuneKune-Contract.pdf" download>KuneKune Contract</a> <a href="contact.html">Contact</a> <a href="https://www.facebook.com/thompsoncorral" target="_blank" rel="noopener noreferrer" aria-label="Thompson Corral on Facebook">Facebook</a>
         </nav>
       </div>
@@ -1012,8 +1016,13 @@ function renderPiglets() {
     unregHeading = `${damFilter}'s Unregistered Piglets`;
     regEmpty = `${damFilter} has no AKKPS piglets currently listed. <a href="piglets.html">View All Piglets</a>.`;
     unregEmpty = `${damFilter} has no unregistered piglets currently listed. <a href="piglets.html">View All Piglets</a>.`;
+    const regMatches = PIGLETS.filter(hasPhotos)
+      .filter((p) => p.dam && p.dam.toLowerCase() === damFilter.toLowerCase()).length;
+    const regHint = regMatches
+      ? ` AKKPS piglets from ${damFilter} are on the <a href="registered-piglets.html?dam=${encodeURIComponent(damFilter)}">registered piglets page</a>.`
+      : "";
     if (banner) {
-      banner.innerHTML = `<p style="margin:0;">Showing only <strong>${damFilter}'s</strong> piglets. <a href="piglets.html">View All Piglets</a></p>`;
+      banner.innerHTML = `<p style="margin:0;">Showing only <strong>${damFilter}'s</strong> unregistered piglets. <a href="piglets.html">View All Piglets</a>${regHint}</p>`;
       banner.className = "filter-banner";
       banner.style.display = "block";
     }
@@ -1023,10 +1032,14 @@ function renderPiglets() {
     banner.innerHTML = "";
   }
 
-  document.getElementById("registered-eyebrow").textContent = regEyebrow;
-  document.getElementById("registered-heading").textContent = regHeading;
-  document.getElementById("unregistered-eyebrow").textContent = unregEyebrow;
-  document.getElementById("unregistered-heading").textContent = unregHeading;
+  /* Each piglet page carries only one of the two listings, so write the
+     heading only where the page actually has one. */
+  [["registered-eyebrow", regEyebrow], ["registered-heading", regHeading],
+   ["unregistered-eyebrow", unregEyebrow], ["unregistered-heading", unregHeading]]
+    .forEach(([id, text]) => {
+      const el = document.getElementById(id);
+      if (el) el.textContent = text;
+    });
 
   renderGrid("piglet-grid", piglets, regEmpty);
   renderGrid("unregistered-grid", unregistered, unregEmpty);
