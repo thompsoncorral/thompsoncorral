@@ -238,6 +238,9 @@ flex-direction: column;
 .product-body p { margin: 0; font-size: 14px; color: var(--ink-soft); flex: 1; }
 .product-body .btn { text-align: center; margin-top: 6px; }
 
+.product-card { scroll-margin-top: 24px; }
+.product-card.spotlight { box-shadow: 0 0 0 3px var(--rust); transition: box-shadow 0.4s ease; }
+
 .coming-soon {
 background: var(--white);
 border: 1px dashed var(--tan-border);
@@ -415,6 +418,9 @@ html { scroll-behavior: auto; }
    { name: "Pig Brush", note: "Our pigs love belly rubs with this.", link: "https://...", image: "images/shop/pig-brush.jpg" },
    - link: your affiliate / Amazon link
    - image: optional (a full https:// image URL or a file in images/shop/)
+   - id: optional. Each product gets its own link for Pinterest etc:
+       thompsoncorral.com/shop-favorites.html#pig-brush
+     (made from the name automatically; set id to pick your own)
    Farm Life Essentials (main: true) always shows at the top.
    The other categories stay hidden until they have at least one item.
    ========================================================= */
@@ -427,6 +433,7 @@ var SHOP = [
 
 (function () {
   function esc(s) { return String(s || "").replace(/[&<>"']/g, function (c) { return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]; }); }
+  function slug(t) { return String(t || "").toLowerCase().replace(/&/g, " and ").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, ""); }
   var nav = document.getElementById("cat-nav"), shop = document.getElementById("shop"), navHtml = "", html = "";
   var visible = SHOP.filter(function (cat) { return cat.main || cat.items.length; });
   visible.forEach(function (cat) {
@@ -435,7 +442,8 @@ var SHOP = [
     if (cat.items.length) {
       html += '<div class="product-grid">';
       cat.items.forEach(function (p) {
-        html += '<article class="product-card">' +
+        var pid = p.id || slug(p.name);
+        html += '<article class="product-card" id="' + esc(pid) + '">' +
           (p.image ? '<img src="' + esc(p.image) + '" alt="' + esc(p.name) + '" loading="lazy" />' : '') +
           '<div class="product-body"><h3>' + esc(p.name) + '</h3><p>' + esc(p.note) + '</p>' +
           '<a class="btn btn-brass" href="' + esc(p.link) + '" target="_blank" rel="sponsored noopener noreferrer">Shop Now</a></div></article>';
@@ -448,6 +456,21 @@ var SHOP = [
   });
   if (visible.length > 1) { nav.innerHTML = navHtml; } else { nav.style.display = "none"; }
   shop.innerHTML = html;
+
+  /* Deep links: shop-favorites.html#product-name scrolls to that product and highlights it */
+  function goToHash() {
+    var id = decodeURIComponent(location.hash.slice(1));
+    if (!id) return;
+    var el = document.getElementById(id);
+    if (!el) return;
+    el.scrollIntoView({ block: "center" });
+    if (el.classList.contains("product-card")) {
+      el.classList.add("spotlight");
+      setTimeout(function () { el.classList.remove("spotlight"); }, 2500);
+    }
+  }
+  goToHash();
+  window.addEventListener("hashchange", goToHash);
 })();
 </script>
 
