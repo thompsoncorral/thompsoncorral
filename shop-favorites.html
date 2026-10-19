@@ -414,19 +414,21 @@ html { scroll-behavior: auto; }
    { name: "Pig Brush", note: "Our pigs love belly rubs with this.", link: "https://...", image: "images/shop/pig-brush.jpg" },
    - link: your affiliate / Amazon link
    - image: optional (a full https:// image URL or a file in images/shop/)
-   A category with no items shows a "coming soon" note.
+   Farm Life Essentials (main: true) always shows at the top.
+   The other categories stay hidden until they have at least one item.
    ========================================================= */
 var SHOP = [
+  { id: "farm-life", main: true, title: "Farm Life Essentials", blurb: "Boots, buckets, tools, and the little things that make farm days easier.", items: [] },
   { id: "pig-care", title: "KuneKune & Pig Care", blurb: "What we use to keep our KuneKunes happy, healthy, and well fed.", items: [] },
   { id: "cattle-care", title: "Cattle Care", blurb: "Favorites for our Brown Swiss herd and daily cattle chores.", items: [] },
-  { id: "farm-life", title: "Farm Life Essentials", blurb: "Boots, buckets, tools, and the little things that make farm days easier.", items: [] },
   { id: "ranch-mama", title: "Ranch Mama Favorites", blurb: "Home, homeschool, and everyday picks from life on the farm.", items: [] }
 ];
 
 (function () {
   function esc(s) { return String(s || "").replace(/[&<>"']/g, function (c) { return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]; }); }
   var nav = document.getElementById("cat-nav"), shop = document.getElementById("shop"), navHtml = "", html = "";
-  SHOP.forEach(function (cat) {
+  var visible = SHOP.filter(function (cat) { return cat.main || cat.items.length; });
+  visible.forEach(function (cat) {
     navHtml += '<a href="#' + cat.id + '">' + esc(cat.title) + '</a>';
     html += '<div class="shop-cat" id="' + cat.id + '"><h2>' + esc(cat.title) + '</h2><p>' + esc(cat.blurb) + '</p>';
     if (cat.items.length) {
@@ -443,7 +445,7 @@ var SHOP = [
     }
     html += '</div>';
   });
-  nav.innerHTML = navHtml;
+  if (visible.length > 1) { nav.innerHTML = navHtml; } else { nav.style.display = "none"; }
   shop.innerHTML = html;
 })();
 </script>
