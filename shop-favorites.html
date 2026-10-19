@@ -397,7 +397,6 @@ html { scroll-behavior: auto; }
 <p class="hero-eyebrow">Farm-Tested Picks</p>
 <h1 style="font-size:clamp(2rem,4vw,3rem);">Shop My Favorites</h1>
 <p>The gear, feed supplies, and everyday things we actually use and love around Thompson Corral, from pig care to cattle chores to farm life.</p>
-<a class="btn btn-brass" href="https://www.tiktok.com/@_rodeomama" target="_blank" rel="noopener noreferrer">See My TikTok Showcase</a>
 </section>
 
 <section class="section">
@@ -413,7 +412,7 @@ html { scroll-behavior: auto; }
    HOW TO ADD A PRODUCT
    Copy one of the lines in a category's "items" list, e.g.
    { name: "Pig Brush", note: "Our pigs love belly rubs with this.", link: "https://...", image: "images/shop/pig-brush.jpg" },
-   - link: your affiliate / TikTok Showcase / Amazon link
+   - link: your affiliate / Amazon link
    - image: optional (a full https:// image URL or a file in images/shop/)
    A category with no items shows a "coming soon" note.
    ========================================================= */
@@ -440,7 +439,7 @@ var SHOP = [
       });
       html += '</div>';
     } else {
-      html += '<div class="coming-soon">Our favorites in this category are coming soon. In the meantime, check out my <a href="https://www.tiktok.com/@_rodeomama" target="_blank" rel="noopener noreferrer">TikTok Showcase</a>.</div>';
+      html += '<div class="coming-soon">Our favorites in this category are coming soon.</div>';
     }
     html += '</div>';
   });
